@@ -30,7 +30,9 @@ const Creation = () => {
           >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img src='/images/dog.png' className='  absolute z-10' alt='' />
-              <div className=' w-full h-full absolute  rounded-l-[15px] rounded-br-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] rounded-tr-[100%] group-hover:animate-full group-hover:rounded-[15px] '></div>
+              <div
+                className={` w-full h-full absolute  rounded-l-[15px] rounded-br-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] rounded-tr-[100%]  group-hover:animate-full group-hover:rounded-[15px] `}
+              ></div>
               <div className='  bg-white rounded-[20px] w-[144px] h-[166px] absolute bottom-[5%]  right-[5%] rotate-[6.64deg]'>
                 <div className=' bg-[#EDEDED] border-[1px] flex px-[20px] text-[24px] font-bold border-solid border-[#A4A4A4] rounded-[20px] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]'>
                   <span className='inline-flex  text-black overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform'>

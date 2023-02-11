@@ -43,7 +43,7 @@ export default function Home() {
               <p className=' text-[10px] font-medium sm:text-[18px] text-white max-w-[368px] mt-3 text-center sm:text-justify '>
                 Unleash your creativity with AI-powered artwork in seconds using
                 our online platform.
-                <span className=' text-[11px] sm:text-[20px] text-transparent textgradient-pp'>
+                <span className=' text-[11px] sm:text-[20px] text-transparent textgradient-pp font-bold'>
                   {" "}
                   Try it now!
                 </span>
@@ -84,7 +84,7 @@ export default function Home() {
         <Creation />
       </Transition>
 
-      <div className=' absolute flex flex-col dur w-fit items-center bottom-0 left-1/2 translate-x-[-50%]'>
+      <div className=' absolute flex flex-col dur w-fit items-center bottom-3 left-1/2 translate-x-[-50%]'>
         <p className='   text-center text-white text-[8px] sm:text-[14px]'>
           Copyright © 2023 ArtsAi By Sandora, All rights reserved.
         </p>
