@@ -22,3 +22,27 @@ html, body {
   background: linear-gradient(267.18deg, #F86C75 9.8%, #5E25FF 99.4%, #4468C5 99.41%);
 -webkit-background-clip: text;
 }
+.cursor::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: #fff;
+  animation: cursor 0.6s linear infinite alternate;
+  will-change: opacity;
+}
+.will-change-transform {
+  will-change: transform;
+}
+@keyframes cursor {
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  60%,
+  100% {
+    opacity: 0;
+  }
+}
