@@ -40,7 +40,7 @@ export default function Home() {
               <p className=' text-[21px] sm:text-[42px] text-[#4f99be] tracking-wider font-bold'>
                 Generator
               </p>
-              <p className=' text-[10px] sm:text-[18px] text-white max-w-[368px] mt-3 text-center sm:text-justify font-bold'>
+              <p className=' text-[10px] font-medium sm:text-[18px] text-white max-w-[368px] mt-3 text-center sm:text-justify '>
                 Unleash your creativity with AI-powered artwork in seconds using
                 our online platform.
                 <span className=' text-[11px] sm:text-[20px] text-transparent textgradient-pp'>

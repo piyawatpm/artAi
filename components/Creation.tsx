@@ -1,19 +1,32 @@
 import { useState } from "react";
-
+import { Transition } from "@headlessui/react";
 const Creation = () => {
-  const [createView, setCreateView] = useState(false);
+  const [createView, setCreateView] = useState(0);
   return (
     <div className=' w-full h-full flex flex-col items-center justify-center py-10'>
-      <>
-        <h1 className=' text-[36px] font-black text-white'>
-          <span className=' text-[#2DD48F]'>Choose</span> a creation method
-        </h1>
-        <div className=' flex  w-full h-full items-center justify-center gap-x-10 '>
+      <h1 className=' text-[36px] font-black text-white'>
+        <span className=' text-[#2DD48F]'>Choose</span> a creation method
+      </h1>
+      <div className={` flex  w-3/4 h-full items-center  gap-x-10 `}>
+        <Transition
+          show={createView === 0 || createView === 1}
+          enter=' duration-500 transition-all '
+          enterFrom='transform scale-0 opacity-0 '
+          enterTo='transform opacity-100 '
+          leave=' transition transform duration-500 transition-all '
+          leaveFrom='transform scale-100 opacity-100 '
+          leaveTo='transform scale-0 opacity-0 '
+          className=''
+        >
           <div
             onClick={() => {
-              setCreateView(true);
+              setCreateView(1);
             }}
-            className=' flex flex-col w-fit gap-y-5 group hover:scale-[120%] cursor-pointer duration-300 '
+            className={` ${
+              createView !== 1
+                ? "hover:scale-[120%] cursor-pointer duration-300"
+                : " scale-[120%]"
+            } flex flex-col w-fit gap-y-5 group `}
           >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img src='/images/dog.png' className='  absolute z-10' alt='' />
@@ -32,11 +45,29 @@ const Creation = () => {
                 alt=''
               />
             </div>
-            <button className='w-4/5 py-3  text-[18px] font-black text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
-              Text to Art
-            </button>
+            {createView === 0 && (
+              <button className='w-4/5 py-3  text-[18px] font-black text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+                Text to Art
+              </button>
+            )}
           </div>
-          <div className=' flex flex-col w-fit gap-y-5 group hover:scale-[120%] cursor-pointer duration-300'>
+        </Transition>
+        <Transition
+          show={createView === 0 || createView === 2}
+          enter=' duration-500 transition-all '
+          enterFrom='transform scale-0 opacity-0 '
+          enterTo='transform scale-100 opacity-100 '
+          leave=' transition transform duration-500 transition-all '
+          leaveFrom='transform scale-100 opacity-100 '
+          leaveTo='transform scale-0 opacity-0 '
+          className=''
+        >
+          <div
+            onClick={() => {
+              setCreateView(2);
+            }}
+            className=' flex flex-col w-fit gap-y-5 group hover:scale-[120%] cursor-pointer duration-300'
+          >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img
                 src='/images/monster.png'
@@ -66,7 +97,23 @@ const Creation = () => {
               Sketch to Art
             </button>
           </div>
-          <div className=' flex flex-col w-fit gap-y-5 group hover:scale-[120%] cursor-pointer duration-300'>
+        </Transition>
+        <Transition
+          show={createView === 0 || createView === 3}
+          enter=' transition transform duration-500 transition-all '
+          enterFrom='transform scale-0 opacity-0 '
+          enterTo='transform scale-100 opacity-100 '
+          leave=' transition transform duration-500 transition-all '
+          leaveFrom='transform scale-100 opacity-100 '
+          leaveTo='transform scale-0 opacity-0 '
+          className=''
+        >
+          <div
+            onClick={() => {
+              setCreateView(3);
+            }}
+            className=' flex flex-col  w-fit gap-y-5 group hover:scale-[120%] cursor-pointer duration-300'
+          >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img
                 src='/images/sando.png'
@@ -91,8 +138,8 @@ const Creation = () => {
               Drawing to Animation
             </button>
           </div>
-        </div>
-      </>
+        </Transition>
+      </div>
     </div>
   );
 };
