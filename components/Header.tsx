@@ -1,14 +1,20 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 const Header = ({ handleBackHome }: any) => {
+  const router = useRouter();
   return (
-    <div className=' w-full z-20  bg-[#172D3B] text-[12px] sm:text-[16px] font-bold flex px-[5%] md:px-[15%] pb-3 pt-2 justify-between'>
+    <div className=' w-full z-20 absolute top-0  bg-[#172D3B] text-[12px] sm:text-[16px] font-bold flex px-[5%] md:px-[15%] pb-3 pt-2 justify-between'>
       <Image
         src='/images/logo.png'
         width={172}
         height={69}
         alt=''
         className=' w-auto sm:w-[172px] h-auto sm:h-[69px] cursor-pointer'
-        onClick={handleBackHome}
+        onClick={() => {
+          if (handleBackHome) handleBackHome();
+          router.push("/");
+          router.reload();
+        }}
       />
       <div className=' flex items-center justify-center text-[#6ED1D7] gap-x-5'>
         <p className=' sm:block hidden'>Pricing</p>

@@ -4,15 +4,11 @@ import { Transition } from "@headlessui/react";
 import { useState } from "react";
 
 type view = "main" | "creation" | "change";
-export default function Home() {
+function Home() {
   const [view, setView] = useState<view>("main");
-  const handleBackHome = () => {
-    setView("change");
-  };
-  return (
-    <div className=' bg h-full relative flex flex-col'>
-      <Header handleBackHome={handleBackHome} />
 
+  return (
+    <div className=' h-full relative flex flex-col'>
       <Transition
         show={view === "main"}
         enter='transition ease-in-out duration-300 transform '
@@ -83,15 +79,8 @@ export default function Home() {
       >
         <Creation />
       </Transition>
-
-      <div className=' absolute flex flex-col dur w-fit items-center bottom-3 left-1/2 translate-x-[-50%]'>
-        <p className='   text-center text-white text-[8px] sm:text-[14px]'>
-          Copyright © 2023 ArtsAi By Sandora, All rights reserved.
-        </p>
-        <p className=' text-[#2DD48F] text-[8px] sm:text-[14px]'>
-          Terms & Conditions | Privacy Policy
-        </p>
-      </div>
     </div>
   );
 }
+
+export default Home;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import CreationDetail from "./CreationDetail";
-enum CreationView {
+export enum CreationView {
   All = "ALL",
   TextToArt = "Text to Art",
   SketchToArt = "Sketch to Art",
@@ -14,17 +14,6 @@ const Creation = () => {
   const [isReady, setIsReady] = useState(false);
   return (
     <div className=' w-full h-full flex flex-col items-center justify-center py-10 relative'>
-      {creationView !== CreationView.All && (
-        <img
-          src='/images/back.png'
-          className=' absolute top-0 left-0 cursor-pointer ml-10 mt-10'
-          onClick={() => {
-            setCreationView(CreationView.All);
-          }}
-          alt=''
-        />
-      )}
-
       {creationView === CreationView.All ? (
         <h1 className=' text-[36px] font-black text-white'>
           <span className=' text-[#2DD48F]'>Choose</span> a creation method
@@ -37,6 +26,16 @@ const Creation = () => {
       <div
         className={` flex  w-3/4 h-full items-center justify-center gap-x-10  `}
       >
+        {creationView !== CreationView.All && (
+          <img
+            src='/images/back.png'
+            className=' absolute top-1/2 left-0 cursor-pointer ml-10'
+            onClick={() => {
+              setCreationView(CreationView.All);
+            }}
+            alt=''
+          />
+        )}
         <Transition
           show={
             creationView === CreationView.All ||
@@ -64,7 +63,7 @@ const Creation = () => {
               creationView !== CreationView.TextToArt
                 ? "hover:scale-[120%] cursor-pointer duration-300"
                 : " scale-[120%]"
-            } flex flex-col w-fit gap-y-5 group `}
+            } flex flex-col w-fit gap-y-5 group  transition `}
           >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img src='/images/dog.png' className='  absolute z-10' alt='' />
@@ -123,7 +122,7 @@ const Creation = () => {
               creationView !== CreationView.SketchToArt
                 ? "hover:scale-[120%] cursor-pointer duration-300"
                 : " scale-[120%]"
-            } flex flex-col w-fit gap-y-5 group `}
+            } flex flex-col w-fit gap-y-5 group  transition `}
           >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img
@@ -190,7 +189,7 @@ const Creation = () => {
               creationView !== CreationView.DrawingToAnimation
                 ? "hover:scale-[120%] cursor-pointer duration-300"
                 : " scale-[120%]"
-            } flex flex-col w-fit gap-y-5 group `}
+            } flex flex-col w-fit gap-y-5 group  transition `}
           >
             <div className=' w-[280px] h-[288px] bg-[#D9D9D9] relative rounded-[15px]   '>
               <img
