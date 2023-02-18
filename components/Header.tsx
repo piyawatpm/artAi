@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-const Header = ({ handleBackHome }: any) => {
+const Header = () => {
   const router = useRouter();
   return (
     <div className=' w-full z-20 absolute top-0  bg-[#172D3B] text-[12px] sm:text-[16px] font-bold flex px-[5%] md:px-[15%] pb-3 pt-2 justify-between'>
@@ -11,16 +11,20 @@ const Header = ({ handleBackHome }: any) => {
         alt=''
         className=' w-auto sm:w-[172px] h-auto sm:h-[69px] cursor-pointer'
         onClick={() => {
-          if (handleBackHome) handleBackHome();
           router.push("/");
-          router.reload();
+          if (router.pathname === "/") router.reload();
         }}
       />
       <div className=' flex items-center justify-center text-[#6ED1D7] gap-x-5'>
-        <p className=' sm:block hidden'>Pricing</p>
-        <p className=' sm:block hidden'>Whitepaper</p>
+        <p className=' sm:block hidden hover:text-white cursor-pointer'>Pricing</p>
+        <p className=' sm:block hidden hover:text-white cursor-pointer'>Whitepaper</p>
         {/* <img src='/images/setting.png' alt='' /> */}
-        <button className=' text-white py-2 px-4 sm:px-7 rounded-[15px] bg-gradient-to-br from-[#0D9488] to-[#4468C5]'>
+        <button
+          onClick={() => {
+            router.push("/sign-in");
+          }}
+          className=' text-white py-2 px-4 sm:px-7 rounded-[15px] bg-gradient-to-br from-[#0D9488] to-[#4468C5]'
+        >
           Sing in
         </button>
       </div>

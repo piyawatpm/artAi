@@ -22,6 +22,10 @@ html, body {
   background: linear-gradient(267.18deg, #F86C75 9.8%, #5E25FF 99.4%, #4468C5 99.41%);
 -webkit-background-clip: text;
 }
+.textgradient-green{
+  background: linear-gradient(173.4deg, #0D9488 23.17%, #FFB100 94.82%);
+-webkit-background-clip: text;
+}
 .cursor::after {
   display: block;
   content: '';

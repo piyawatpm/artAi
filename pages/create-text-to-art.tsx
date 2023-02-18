@@ -7,7 +7,7 @@ const CreateTextToArt = () => {
     setLetter("");
   };
   return (
-    <div className=' w-full h-full flex flex-col items-center justify-center'>
+    <div className=' w-full h-full flex flex-col items-center justify-center px-10 '>
       <h1 className=' text-[36px] font-black text-white'>
         Create <span className=' text-[#2DD48F]'>Text to Art</span>
       </h1>
@@ -32,14 +32,15 @@ const CreateTextToArt = () => {
             }}
             placeholder='Describe the image you want to create'
             id=''
+            maxLength={600}
             className=' rounded-[15px] bg-white w-full h-[200px] px-[32px] py-[25px] relative'
           ></textarea>
-          <p className=' text-[#B0AAAA] text-[16px] font-medium absolute bottom-[1%] right-[2%]'>
+          <p className=' text-[#B0AAAA] text-[16px] font-medium absolute bottom-[2%] right-[1%]'>
             {letter.length}/600
           </p>
         </div>
       </div>
-      <button className='w-[15%] mt-[50px] py-3  text-[18px] font-black text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+      <button className='w-[15%] mt-[80px] py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
         Create Art
       </button>
     </div>

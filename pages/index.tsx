@@ -33,7 +33,7 @@ function Home() {
               <h1 className=' text-[50px] sm:text-[100px] tracking-widest leading-[1em] font-bold text-transparent textgradient'>
                 Art<span className=' text-[35px] sm:text-[70px]'>s</span>Ai
               </h1>
-              <p className=' text-[21px] sm:text-[42px] text-[#4f99be] tracking-wider font-bold'>
+              <p className=' text-[21px] sm:text-[42px] text-[#36ECF5] tracking-wider font-bold'>
                 Generator
               </p>
               <p className=' text-[10px] font-medium sm:text-[18px] text-white max-w-[368px] mt-3 text-center sm:text-justify '>
