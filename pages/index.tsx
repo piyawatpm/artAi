@@ -1,5 +1,6 @@
 import Creation from "@/components/Creation";
 import Header from "@/components/Header";
+import MyModal from "@/components/Popup";
 import { Transition } from "@headlessui/react";
 import { useState } from "react";
 
@@ -9,6 +10,7 @@ function Home() {
 
   return (
     <div className=' h-full relative flex flex-col'>
+      <MyModal />
       <Transition
         show={view === "main"}
         enter='transition ease-in-out duration-300 transform '
