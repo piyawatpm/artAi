@@ -10,7 +10,7 @@ const Footer = () => {
           href={"/term-and-condition"}
           className=' text-[#2DD48F] text-[8px] sm:text-[14px] hover:text-white'
         >
-          Terms & Conditions
+         Terms of Use
         </Link>
         <p className=' text-[#2DD48F] mx-2'>|</p>
         <Link

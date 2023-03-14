@@ -40,7 +40,7 @@ const CreateTextToArt = () => {
           </p>
         </div>
       </div>
-      <button className='w-[15%] mt-[80px] py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+      <button className='w-[200px] mt-[80px] py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
         Create Art
       </button>
     </div>

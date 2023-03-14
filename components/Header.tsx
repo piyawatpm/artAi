@@ -16,8 +16,17 @@ const Header = () => {
         }}
       />
       <div className=' flex items-center justify-center text-[#6ED1D7] gap-x-5'>
-        <p className=' sm:block hidden hover:text-white cursor-pointer'>Pricing</p>
-        <p className=' sm:block hidden hover:text-white cursor-pointer'>Whitepaper</p>
+        <p
+          onClick={() => {
+            router.push("/pricing");
+          }}
+          className=' sm:block hidden  text-white hover:text-[#6ED1D7] cursor-pointer uppercase'
+        >
+          Pricing
+        </p>
+        <p className=' sm:block hidden text-white hover:text-[#6ED1D7] cursor-pointer uppercase'>
+          Whitepaper
+        </p>
         {/* <img src='/images/setting.png' alt='' /> */}
         <button
           onClick={() => {

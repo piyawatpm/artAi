@@ -54,3 +54,16 @@ html, body {
 h2{
   font-weight: bold;
 }
+.gradient4{
+  background: linear-gradient(267.18deg, #280D94 9.8%, #4468C5 64.35%, #8C70DC 99.41%);
+
+}
+.gradient3{
+  background: linear-gradient(267.18deg, #F86C75 9.8%, #5E25FF 99.4%, #4468C5 99.41%);
+}
+.gradient2{
+  background: linear-gradient(173.4deg, #0D9488 23.17%, #FFB100 94.82%);
+}
+.gradient1{
+  background: linear-gradient(267.18deg, #0D9488 9.8%, #4468C5 64.35%, #8C70DC 99.41%);
+}
