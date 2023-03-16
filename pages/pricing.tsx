@@ -3,7 +3,7 @@ function Pricing() {
     <div className=' h-full w-full relative flex flex-col items-center  py-[8%] justify-center gap-y-5'>
       <div className=' flex gap-x-2 text-[36px] font-black text-white'>
         <p className='text-[#2DD48F]'>Package</p>
-        <p>credit</p>
+        <p>Credit</p>
       </div>
       <div className=' flex w-4/5  h-full  items-center'>
         <img src='/images/left.png' className='' alt='' />

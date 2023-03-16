@@ -89,7 +89,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className='w-4/5 py-3  text-[18px] font-black text-[#172D3B] rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+              <button className='w-4/5 py-3  text-[18px] font-black text-black rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
                 Text to Art
               </button>
             )}
@@ -156,7 +156,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className=' w-4/5 py-3  text-[18px] font-black text-[#172D3B] rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'>
+              <button className=' w-4/5 py-3  text-[18px] font-black text-black rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'>
                 Sketch to Art
               </button>
             )}
@@ -218,7 +218,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className=' w-4/5 py-3  text-[18px] font-black text-[#172D3B] rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+              <button className=' w-4/5 py-3  text-[18px] font-black text-black rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
                 Drawing to Animation
               </button>
             )}

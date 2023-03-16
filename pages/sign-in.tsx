@@ -1,9 +1,9 @@
 const SignIn = () => {
   return (
     <div className=' flex flex-col text-white py-[10%] items-center justify-center gap-y-5'>
-      <h1 className=' text-[36px] font-black'>Log in or sign up</h1>
+      <h1 className=' text-[36px] font-black'>Log in or Sign up</h1>
       <p className=' text-[16px] font-bold'>
-        Connect using Google, Facebook or your email address.
+        Connect using Google, Facebook or your Email address.
       </p>
       <div className=' flex flex-col gap-y-2 w-full items-center'>
         <div className=' w-[45%] bg-[#143B8B]  rounded-[10px] flex items-center justify-center gap-x-5  cursor-pointer font-bold py-5'>
