@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   return (
-    <div className=' w-full z-20 absolute top-0  bg-[#172D3B] text-[12px] sm:text-[16px] font-bold flex px-[5%] md:px-[15%] pb-3 pt-2 justify-between'>
+    <div className=' w-full z-20 absolute top-0  header text-[12px] sm:text-[16px] font-bold flex px-[5%] md:px-[15%] pb-3 pt-2 justify-between'>
       <Image
         src='/images/logo.png'
         width={172}
