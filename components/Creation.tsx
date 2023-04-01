@@ -13,13 +13,13 @@ const Creation = () => {
   );
   const [isReady, setIsReady] = useState(false);
   return (
-    <div className=' w-full h-full flex flex-col items-center justify-center py-10 relative'>
+    <div className=' w-full h-full flex flex-col items-center justify-center py-[10%] relative'>
       {creationView === CreationView.All ? (
-        <h1 className=' text-[36px] font-black text-white'>
-          <span className=' text-[#2DD48F]'>Choose</span> a creation method
+        <h1 className=' text-[36px] font-bold text-white'>
+          <span className=' text-[#2DD48F]'>Choose</span> a Creation Method
         </h1>
       ) : (
-        <h1 className=' text-[36px] font-black text-white'>
+        <h1 className=' text-[36px] font-bold text-white'>
           Create <span className=' text-[#2DD48F]'> {creationView}</span>
         </h1>
       )}
@@ -76,7 +76,7 @@ const Creation = () => {
               ></div>
               <div className='  bg-white rounded-[20px] w-[144px] h-[166px] absolute bottom-[5%]  right-[5%] rotate-[6.64deg]'>
                 <div className=' bg-[#EDEDED] border-[1px] flex px-[20px] text-[24px] font-bold border-solid border-[#A4A4A4] rounded-[20px] absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]'>
-                  <span className='inline-flex  text-black overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform'>
+                  <span className='inline-flex   text-white overflow-x-hidden animate-type group-hover:animate-type-reverse whitespace-nowrap text-brand-accent will-change-transform'>
                     Dog
                   </span>
                   <span className='box-border inline-block w-1 h-5 ml-1 my-auto  bg-white  animate-cursor will-change-transform'></span>
@@ -89,7 +89,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className='w-4/5 py-3  text-[18px] font-black text-black rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+              <button className='w-4/5 py-3  text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
                 Text to Art
               </button>
             )}
@@ -156,7 +156,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className=' w-4/5 py-3  text-[18px] font-black text-black rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'>
+              <button className=' w-4/5 py-3  text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'>
                 Sketch to Art
               </button>
             )}
@@ -218,7 +218,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className=' w-4/5 py-3  text-[18px] font-black text-black rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
+              <button className=' w-4/5 py-3  text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'>
                 Drawing to Animation
               </button>
             )}

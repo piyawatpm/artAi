@@ -27,11 +27,11 @@ const CreationDetail = ({ view }: CreationDetailType) => {
           <div className=' w-[90px] items-center justify-center flex'>
             <img src='/images/text-3.png' className='' alt='' />
           </div>
-          <p>Images are Ai generated.</p>
+          <p>Images are Ai generated</p>
         </div>
         <Link
           href={"/create-text-to-art"}
-          className="className=' hover:scale-125 duration-300 w-2/3 mx-auto py-3  text-[18px] font-black text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'"
+          className="className=' hover:scale-125 duration-300 w-2/3 mx-auto py-3  text-[18px] font-medium text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'"
         >
           Create Art
         </Link>
@@ -60,11 +60,11 @@ const CreationDetail = ({ view }: CreationDetailType) => {
           <div className=' w-[90px] items-center justify-center flex'>
             <img src='/images/sketch-3.png' className='' alt='' />
           </div>
-          <p>Images are Ai generated.</p>
+          <p>Images are Ai generated</p>
         </div>
         <Link
           href={"/create-sketch-to-art"}
-          className="className=' w-2/3 mx-auto py-3  text-[18px] font-black text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'"
+          className="className=' w-2/3 mx-auto py-3  text-[18px] font-medium text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'"
         >
           Create Art
         </Link>
@@ -94,11 +94,11 @@ const CreationDetail = ({ view }: CreationDetailType) => {
           <div className=' w-[90px] items-center justify-center flex'>
             <img src='/images/sketch-3.png' className='' alt='' />
           </div>
-          <p>Images are Ai generated.</p>
+          <p>Images are Ai generated</p>
         </div>
         <Link
           href={"/drawing-to-animation"}
-          className="className=' w-2/3 mx-auto py-3  text-[18px] font-black text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'"
+          className="className=' w-2/3 mx-auto py-3  text-[18px] font-medium text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto'"
         >
           Create Art
         </Link>

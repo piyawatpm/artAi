@@ -27,6 +27,14 @@ const Header = () => {
         <p className=' sm:block hidden text-white hover:text-[#6ED1D7] cursor-pointer uppercase'>
           Whitepaper
         </p>
+        <p
+          onClick={() => {
+            router.push("/help");
+          }}
+          className=' sm:block hidden  text-white hover:text-[#6ED1D7] cursor-pointer uppercase'
+        >
+          Help
+        </p>
         {/* <img src='/images/setting.png' alt='' /> */}
         <button
           onClick={() => {
