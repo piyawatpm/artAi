@@ -18,7 +18,7 @@ function Pricing() {
               </p>
               <p className=' text-[8px] font-normal'>Billed Prepaid 30 days</p>
             </div>
-            <div className=' w-full h-full text-[9px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
+            <div className=' w-full h-full text-[12px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
               <ul className=' list-disc px-5 gap-y-5 h-[90%] flex flex-col justify-around'>
                 <li>Image resolution of 512*512</li>
                 <li>
@@ -45,7 +45,7 @@ function Pricing() {
               </p>
               <p className=' text-[8px] font-normal'>Billed Prepaid 30 days</p>
             </div>
-            <div className=' w-full h-full text-[9px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
+            <div className=' w-full h-full text-[12px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
               <ul className=' list-disc px-5 gap-y-5 h-[90%] flex flex-col justify-around'>
                 <li>Image resolution of 768*768.</li>
                 <li>100 images generations in <br/>art styles.</li>
@@ -72,7 +72,7 @@ function Pricing() {
               </p>
               <p className=' text-[8px] font-normal'>Billed Prepaid 30 days</p>
             </div>
-            <div className=' w-full h-full text-[9px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
+            <div className=' w-full h-full text-[12px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
               <ul className=' list-disc px-5 gap-y-5 h-[90%]  flex flex-col justify-around'>
                 <li>Image resolution of 1024*1024.</li>
                 <li>100 images generations in <br/>art styles.</li>
@@ -99,7 +99,7 @@ function Pricing() {
               </p>
               <p className=' text-[8px] font-normal'>Billed Prepaid 30 days</p>
             </div>
-            <div className=' w-full h-full text-[9px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
+            <div className=' w-full h-full text-[12px] rounded-b-[15px] font-normal bg-white flex flex-col  py-3 justify-around items-center'>
               <ul className=' list-disc px-5 gap-y-5 h-[90%] flex flex-col justify-around'>
                 <li>Image resolution of 1024*1024.</li>
                 <li>200 images generations in <br/>art styles.</li>
