@@ -41,7 +41,7 @@ const Header = () => {
           }}
           className=" sm:block hidden  text-white hover:text-[#6ED1D7] cursor-pointer uppercase"
         >
-          Help
+          Help Centre
         </p>
         {/* <img src='/images/setting.png' alt='' /> */}
         <button

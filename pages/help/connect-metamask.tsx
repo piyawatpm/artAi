@@ -7,16 +7,21 @@ const ConnectMetamask = () => {
         <h1 className=" text-[24px] font-bold text-[#0D9488]">
           How do I connect my metamark wallet to the platform?
         </h1>
-        <p>
-          To connect your MetaMask wallet to the ArtsAi platform, please follow
-          these steps: <br />
+        <p className=" mx-[30px] flex flex-col gap-y-5">
+          <p>
+            To connect your MetaMask wallet to the ArtsAi platform, please
+            follow these steps:
+          </p>
           1. Go to the pricing page on the ArtsAi website and select the package
           you want to purchase. <br />
           2. Click "Get Started" and choose the MetaMask option. <br />
           3. Connect your MetaMask wallet by following the prompts on the
-          screen. By connecting your MetaMask wallet to the ArtsAi platform, you
-          will be able to pay for your purchases using cryptocurrency, providing
-          you with greater privacy, security, and flexibility.
+          <p>
+            {' '}
+            screen. By connecting your MetaMask wallet to the ArtsAi platform,
+            you will be able to pay for your purchases using cryptocurrency,
+            providing you with greater privacy, security, and flexibility.
+          </p>
         </p>
       </div>
     </div>

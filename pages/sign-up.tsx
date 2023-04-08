@@ -1,11 +1,11 @@
 const SignIn = () => {
   return (
     <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5">
-      <h1 className=" text-[36px] font-black">sign up</h1>
+      <h1 className=" text-[36px] font-black">Sign up</h1>
 
       <div className=" flex flex-col gap-y-2 w-full items-center text-[18px] font-light">
         <div className=" flex flex-col gap-y-1">
-          <p>UserName</p>
+          <p className=" text-[16px]">User Name</p>
           <input
             type="text"
             className=" w-[500px] p-2 pl-3 text-black rounded-[6px]"
@@ -14,7 +14,7 @@ const SignIn = () => {
           />
         </div>
         <div className=" flex flex-col gap-y-1">
-          <p>E-mail</p>
+          <p className=" text-[16px]">E-Mail</p>
           <input
             type="text"
             className=" w-[500px] p-2 pl-3 text-black rounded-[6px]"
@@ -23,7 +23,7 @@ const SignIn = () => {
           />
         </div>
         <div className=" flex flex-col gap-y-1">
-          <p>Password</p>
+          <p className=" text-[16px]">Password</p>
           <input
             type="text"
             className=" w-[500px] p-2 pl-3 text-black rounded-[6px]"

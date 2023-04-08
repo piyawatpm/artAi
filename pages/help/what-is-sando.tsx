@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 /* eslint-disable react/no-unescaped-entities */
 const ConnectMetamask = () => {
   return (
@@ -13,10 +15,13 @@ const ConnectMetamask = () => {
           acquire Sando token, you can purchase it on supported cryptocurrency
           exchanges such as Uniswap, Sushiswap, or PancakeSwap. You can also buy
           Sandotoken directly from the official Sandotoken website at
-          www.sandotoken.io. once you have acquired Sandotoken, you can use it
-          to purchase package credits on the ArtsAi platform. These package
-          credits can be used to generate AI-generated images, art, and
-          animations at a discounted price.
+          <Link href={'http://sandotoken.io/'} className=" underline ml-2">
+            www.sandotoken.io
+          </Link>
+          . once you have acquired Sandotoken, you can use it to purchase
+          package credits on the ArtsAi platform. These package credits can be
+          used to generate AI-generated images, art, and animations at a
+          discounted price.
         </p>
       </div>
     </div>
