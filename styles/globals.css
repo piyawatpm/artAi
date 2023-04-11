@@ -54,6 +54,14 @@ html, body {
 h2{
   font-weight: bold;
 }
+.textgradient-1{
+  background: linear-gradient(267.18deg, #F86C75 9.8%, #5E25FF 99.4%, #4468C5 99.41%);
+-webkit-background-clip: text;
+}
+.textgradient-2{
+  background: linear-gradient(267.18deg, #5328FF 9.8%, #4468C5 31.11%, #8C70DC 99.41%);
+-webkit-background-clip: text;
+}
 .gradient4{
   background: linear-gradient(186.27deg, #2100A3 -2.07%, #4A6ECB 62.83%, #8C70DC 93.58%);
 

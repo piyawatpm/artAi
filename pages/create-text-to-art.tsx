@@ -28,6 +28,7 @@ const CreateTextToArt = () => {
   };
   function downloadImage() {
     const link = document.createElement('a');
+    // @ts-ignore
     link.href = URL.createObjectURL(b64toBlob(previewImage, 'image/png'));
     link.download = 'image.png';
     link.click();

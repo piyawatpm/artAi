@@ -1,14 +1,14 @@
-import { canvasPreview } from "@/lib/canvasPreview";
-import { useDebounceEffect } from "@/lib/useDebounceEffect";
-import type { NextPage } from "next";
-import { useEffect, useRef, useState } from "react";
+import { canvasPreview } from '@/lib/canvasPreview';
+import { useDebounceEffect } from '@/lib/useDebounceEffect';
+import type { NextPage } from 'next';
+import { useEffect, useRef, useState } from 'react';
 import ReactCrop, {
   centerCrop,
   makeAspectCrop,
   Crop,
   PixelCrop,
-} from "react-image-crop";
-import "react-image-crop/dist/ReactCrop.css";
+} from 'react-image-crop';
+import 'react-image-crop/dist/ReactCrop.css';
 function centerAspectCrop(
   mediaWidth: number,
   mediaHeight: number,
@@ -17,7 +17,7 @@ function centerAspectCrop(
   return centerCrop(
     makeAspectCrop(
       {
-        unit: "%",
+        unit: '%',
         width: 90,
       },
       aspect,
@@ -29,7 +29,7 @@ function centerAspectCrop(
   );
 }
 const CreateSkeychToArt = () => {
-  const [imgSrc, setImgSrc] = useState("");
+  const [imgSrc, setImgSrc] = useState('');
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const [crop, setCrop] = useState<Crop>();
@@ -38,13 +38,14 @@ const CreateSkeychToArt = () => {
   const [rotate, setRotate] = useState(0);
   const [aspect, setAspect] = useState<number | undefined>(16 / 9);
   const uploadRef = useRef(null);
-
+  const [isComplete, setIsComplete] = useState();
+  const [isLoading, setIsLoading] = useState();
   function onSelectFile(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files && e.target.files.length > 0) {
       setCrop(undefined); // Makes crop preview update between images.
       const reader = new FileReader();
-      reader.addEventListener("load", () =>
-        setImgSrc(reader.result?.toString() || "")
+      reader.addEventListener('load', () =>
+        setImgSrc(reader.result?.toString() || '')
       );
       reader.readAsDataURL(e.target.files[0]);
     }
@@ -88,33 +89,37 @@ const CreateSkeychToArt = () => {
     }
   }, [imgRef]);
   const handleRemoveImg = () => {
-    setImgSrc("");
+    setImgSrc('');
+  };
+  const handleUpload = () => {
+    const croppedBinary = previewCanvasRef.current?.toDataURL();
+    console.log(croppedBinary);
   };
   return (
-    <div className=' w-full h-full flex flex-col items-center justify-center py-[10%] '>
+    <div className=" w-full h-full flex flex-col items-center justify-center py-[10%] ">
       <input
-        type='file'
-        accept='image/*'
-        className=' bg-red-500'
+        type="file"
+        accept="image/*"
+        className=" bg-red-500 hidden"
         ref={uploadRef}
         onChange={onSelectFile}
       />
 
-      <h1 className=' text-[36px] font-black text-white'>
-        Create <span className=' text-[#2DD48F]'>Sketch to Art</span>
+      <h1 className=" text-[36px] font-black text-white">
+        Create <span className=" text-[#2DD48F]">Sketch to Art</span>
       </h1>
-      <div className=' flex flex-col w-3/4 gap-y-5'>
-        <p className=' text-[24px] mr-auto font-bold text-transparent textgradient-green'>
+      <div className=" flex flex-col w-3/4 gap-y-5">
+        <p className=" text-[24px] mr-auto font-bold text-transparent textgradient-green">
           Upload your photo
         </p>
 
-        <div className=' flex w-full'>
-          <div className=' relative w-3/5 flex items-center justify-center mx-auto rounded-[15px] border-2 border-[#0D9488] border-dashed h-[300px] '>
+        <div className=" flex w-full">
+          <div className=" relative w-3/5 flex items-center justify-center mx-auto rounded-[15px] border-2 border-[#0D9488] border-dashed h-[300px] ">
             {imgSrc ? (
               <>
                 <p
                   onClick={handleRemoveImg}
-                  className=' text-white absolute top-2 right-2'
+                  className=" text-white absolute top-2 right-2"
                 >
                   X
                 </p>
@@ -126,7 +131,7 @@ const CreateSkeychToArt = () => {
                 >
                   <img
                     ref={imgRef}
-                    alt='Crop me'
+                    alt="Crop me"
                     src={imgSrc}
                     style={{
                       transform: `scale(${scale}) rotate(${rotate}deg)`,
@@ -135,7 +140,7 @@ const CreateSkeychToArt = () => {
                   />
                 </ReactCrop>
 
-                <div>
+                {/* <div>
                   {!!completedCrop && (
                     <canvas
                       ref={previewCanvasRef}
@@ -147,7 +152,7 @@ const CreateSkeychToArt = () => {
                       }}
                     />
                   )}
-                </div>
+                </div> */}
               </>
             ) : (
               <div
@@ -155,16 +160,19 @@ const CreateSkeychToArt = () => {
                   // @ts-ignore
                   uploadRef.current.click();
                 }}
-                className='px-5 py-3 cursor-pointer gap-x-3 text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#4468C5] flex items-center justify-center mx-auto'
+                className="px-5 py-3 cursor-pointer gap-x-3 text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#4468C5] flex items-center justify-center mx-auto"
               >
                 Choose File
-                <img src='/images/upload.png' alt='' />
+                <img src="/images/upload.png" alt="" />
               </div>
             )}
           </div>
         </div>
       </div>
-      <button className='w-[200px] mt-10 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'>
+      <button
+        onClick={handleUpload}
+        className="w-[200px] mt-10 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto"
+      >
         Create Art
       </button>
     </div>

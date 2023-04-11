@@ -1,15 +1,16 @@
-import Creation from '@/components/Creation';
+import Creation from '@/pages/create-arts';
 import Header from '@/components/Header';
 import MyModal from '@/components/Popup';
 import { Transition } from '@headlessui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Catagories from '@/pages/creation-choice';
+import { useRouter } from 'next/router';
 
 type view = 'main' | 'creation' | 'change';
 function Home() {
   const [view, setView] = useState<view>('main');
-
-
+  const  router  = useRouter();
   return (
     <div className=" h-full relative flex flex-col">
       <MyModal />
@@ -50,7 +51,7 @@ function Home() {
               </p>
               <button
                 onClick={() => {
-                  setView('change');
+                  router.push('/creation-choice');
                 }}
                 className=" mx-auto mt-5 flex items-center gap-x-2  text-white py-[5px] sm:py-[10px] px-[10px] sm:px-[20px] bg-gradient-to-br from-[#0D9488] to-[#4468C5] rounded-[15px] text-[10px] sm:text-[20px] font-bold "
               >
@@ -68,7 +69,7 @@ function Home() {
           </div>
         </div>
       </Transition>
-      <Transition
+      {/* <Transition
         afterLeave={() => {
           setView('main');
         }}
@@ -82,7 +83,8 @@ function Home() {
         className="w-full h-full "
       >
         <Creation />
-      </Transition>
+        <Catagories />
+      </Transition> */}
     </div>
   );
 }
