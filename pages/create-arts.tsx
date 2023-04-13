@@ -13,7 +13,7 @@ const Creation = () => {
   );
   const [isReady, setIsReady] = useState(false);
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center py-[10%] relative">
+    <div className=" w-full h-full flex flex-col items-center justify-center gap-y-10 py-[10%] relative">
       {creationView === CreationView.All ? (
         <h1 className=" text-[36px] font-bold text-white">
           <span className=" text-[#2DD48F]">Choose</span> a Creation Method

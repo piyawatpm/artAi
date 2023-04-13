@@ -4,7 +4,7 @@ const Catagories = () => {
   const router = useRouter();
   return (
     <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5">
-      <h1 className=" text-[36px] font-black">
+      <h1 className=" text-[36px] font-bold">
         <span className=" text-[#2DD48F]">Catagories</span> of AI base Services
       </h1>
       <div className=" w-full flex items-center justify-center gap-x-20 mt-12">

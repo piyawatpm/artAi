@@ -5,7 +5,7 @@ const SignIn = () => {
   const router = useRouter();
   return (
     <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5 text-center">
-      <h1 className=" text-[36px] font-black">Help Centre</h1>
+      <h1 className=" text-[36px] font-bold">Help Centre</h1>
       <div className=" flex items-center justify-center gap-x-5 ">
         <div
           onClick={() => {
@@ -146,7 +146,7 @@ const SignIn = () => {
           What are the guidelines for using copyrighted material on Artsai?
         </div>
       </div>
-      <h1 className=" text-[36px] font-black">Get more help</h1>
+      <h1 className=" text-[36px] font-bold">Get more help</h1>
       <div className=" flex items-center justify-center gap-x-5">
         <div className=" w-[110px] text-black bg-[#F4F4F4]  text-[10px] font-bolds h-[110px] rounded-[17px] px-[14px] font-bold cursor-pointer help_box flex flex-col items-center justify-center">
           <img src="/images/help/doc.png" alt="" />

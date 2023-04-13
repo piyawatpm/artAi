@@ -23,35 +23,30 @@ export default async function handler(
   }
 
   const text = req.body.text;
+  const init_image = req.body.init_image;
   const engine_id = 'stable-diffusion-v1-5';
-  const data = {
-    body: JSON.stringify({
-      text_prompts: [
-        {
-          text: text,
-        },
-      ],
-      cfg_scale: 7,
-      clip_guidance_preset: 'FAST_BLUE',
-      height: 512,
-      width: 512,
-      samples: 4,
-      steps: 30,
-    }),
-  };
+  const formData = new FormData();
+  formData.append('init_image', init_image);
+  formData.append('init_image_mode', 'IMAGE_STRENGTH');
+  formData.append('image_strength', '0.35');
+  formData.append('text_prompts[0][text]', text);
+  formData.append('cfg_scale', '7');
+  formData.append('clip_guidance_preset', 'FAST_BLUE');
+  formData.append('samples', '1');
+  formData.append('steps', '30');
+
   const header = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      ...formData,
       Accept: 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+      Authorization: `Bearer2 ${process.env.NEXT_PUBLIC_API_KEY}`,
     },
     // samples: 4,
   };
   try {
     const response = await axios.post(
-      `https://api.stability.ai/v1/generation/${engine_id}/text-to-image`,
-      data.body,
+      `https://api.stability.ai/v1/generation/${engine_id}/image-to-image`,
       header
     );
     // console.log(response)
@@ -68,7 +63,6 @@ export default async function handler(
       image4,
     });
   } catch (e) {
-    console.error(e);
-    return res.status(500).send({ message: 'Something went wrong.' });
+    return res.status(500).send(e);
   }
 }

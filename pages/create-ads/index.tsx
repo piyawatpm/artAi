@@ -20,10 +20,10 @@ const Catagories = () => {
             Smarter social media campaigns with AI
           </p>
           <Link
-            href={'/'}
+            href={'/create-ads/step1'}
             className=" w-full mx-auto py-3  text-[18px] font-medium text-white rounded-[15px] bg-gradient-to-l from-[#F86C75] via-[#5E25FF] to-[#4468C5] flex items-center justify-center mx-auto'"
           >
-            Create Art
+          Create Now
           </Link>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import axios from 'axios';
 import type { NextPage } from 'next';
 import { useState } from 'react';
-import { PacmanLoader } from 'react-spinners';
+import { FacebookShareButton } from 'react-share';
+import { PacmanLoader, RingLoader } from 'react-spinners';
 
 const CreateTextToArt = () => {
   const [letter, setLetter] = useState('');
-  const [previewImage, setPreviewImage] = useState<string>();
+  const [previewImage, setPreviewImage] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const clearText = () => {
@@ -16,9 +17,13 @@ const CreateTextToArt = () => {
     setIsLoading(true);
     try {
       const response = await axios.post('/api/textToArt', { text: letter });
-      const image = await response.data.image;
-      console.log(image);
-      setPreviewImage(image);
+      const image1 = await response.data.image;
+      // console.log(image1);
+      const image2 = await response.data.image2;
+      const image3 = await response.data.image3;
+      const image4 = await response.data.image4;
+      setPreviewImage([image1, image2, image3, image4]);
+      console.log(response);
       setIsLoading(false);
       setIsComplete(true);
     } catch {
@@ -29,21 +34,48 @@ const CreateTextToArt = () => {
   function downloadImage() {
     const link = document.createElement('a');
     // @ts-ignore
-    link.href = URL.createObjectURL(b64toBlob(previewImage, 'image/png'));
-    link.download = 'image.png';
-    link.click();
+    previewImage?.forEach((e) => {
+      link.href = URL.createObjectURL(b64toBlob(e, 'image/png'));
+      link.download = 'image.png';
+      link.click();
+    });
   }
+
+
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center px-10 ">
-      <h1 className=" text-[36px] font-black text-white">
+    <div className=" w-full h-full flex flex-col items-center py-[10%] px-10 ">
+      <h1 className=" text-[36px] font-black text-white mb-8">
         Create <span className=" text-[#2DD48F]">Text to Art</span>
       </h1>
-      {isComplete && !isLoading ? (
+      {isLoading ? (
+        <>
+          <RingLoader size={241} color="white" className="my-auto" />
+        </>
+      ) : isComplete ? (
         <div className=" flex w-full items-center justify-center gap-x-[5%]">
-          <div className=" w-[400px] h-[400px]">
-            <img src={`data:image/png;base64,${previewImage}`} alt="" />
+          <div className="  gap-3 grid grid-cols-2">
+            <img
+              className=" w-[200px] h-[200px]"
+              src={`data:image/png;base64,${previewImage[0]}`}
+              alt=""
+            />
+            <img
+              className=" w-[200px] h-[200px]"
+              src={`data:image/png;base64,${previewImage[1]}`}
+              alt=""
+            />
+            <img
+              className=" w-[200px] h-[200px]"
+              src={`data:image/png;base64,${previewImage[2]}`}
+              alt=""
+            />
+            <img
+              className=" w-[200px] h-[200px]"
+              src={`data:image/png;base64,${previewImage[3]}`}
+              alt=""
+            />
           </div>
-          <div className=" flex flex-col text-white text-[36px] font-bold items-center justify-center ">
+          <div className=" flex flex-col text-white text-[18px] font-bold items-center justify-center ">
             {letter}
             <button
               onClick={downloadImage}
@@ -52,13 +84,15 @@ const CreateTextToArt = () => {
               <img src="/images/download.png" alt="" />
               Download
             </button>
-            <button
-              // onClick={onSubmit}
-              className="w-[200px] mt-3 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r bg-[#0D9488] flex items-center p-[20%] gap-x-3 mx-auto"
-            >
-              <img src="/images/share.png" alt="" />
-              Shere
-            </button>
+            <FacebookShareButton url={'https://www.artsai.io/'} quote={'title'}>
+              <button
+                // onClick={onSubmit}
+                className="w-[200px] mt-3 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r bg-[#0D9488] flex items-center p-[20%] gap-x-3 mx-auto"
+              >
+                <img src="/images/share.png" alt="" />
+                Shere
+              </button>
+            </FacebookShareButton>
           </div>
         </div>
       ) : (
@@ -110,7 +144,7 @@ const CreateTextToArt = () => {
     </div>
   );
 };
-function b64toBlob(b64Data: string, contentType = '', sliceSize = 512): Blob {
+export function b64toBlob(b64Data: string, contentType = '', sliceSize = 512): Blob {
   const byteCharacters = atob(b64Data);
   const byteArrays = [];
   for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
