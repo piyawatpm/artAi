@@ -5,7 +5,7 @@ const Catagories = () => {
   return (
     <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5">
       <h1 className=" text-[36px] font-bold">
-        <span className=" text-[#2DD48F]">Catagories</span> of AI base Services
+        <span className=" text-[#2DD48F]">Categories</span> of AI base Services
       </h1>
       <div className=" w-full flex items-center justify-center gap-x-20 mt-12">
         <div
@@ -14,7 +14,7 @@ const Catagories = () => {
         >
           <img src="/images/digital-arts.png" alt="" />
           <p className=" text-transparent textgradient-1 text-[16px] text-center">
-            Experience art <br />
+            Experience NFT art <br />
             in a new way with AI
           </p>
         </div>

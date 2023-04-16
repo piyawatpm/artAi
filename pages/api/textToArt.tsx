@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
-
+const deepai = require('deepai')
 async function postData(url = '', data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
@@ -18,6 +18,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  deepai.setApiKey('7a674fc4-34fc-4801-a27e-c34049e322f4');
   if (req.method !== 'POST') {
     return res.status(405).send({ message: 'Obly POST requests are allowed' });
   }
@@ -39,6 +40,7 @@ export default async function handler(
       steps: 30,
     }),
   };
+
   const header = {
     method: 'POST',
     headers: {

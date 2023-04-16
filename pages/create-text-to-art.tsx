@@ -3,33 +3,66 @@ import type { NextPage } from 'next';
 import { useState } from 'react';
 import { FacebookShareButton } from 'react-share';
 import { PacmanLoader, RingLoader } from 'react-spinners';
+import deepai from 'deepai';
+deepai.setApiKey('7a674fc4-34fc-4801-a27e-c34049e322f4');
 
 const CreateTextToArt = () => {
   const [letter, setLetter] = useState('');
-  const [previewImage, setPreviewImage] = useState<string[]>([]);
+  const [previewImage, setPreviewImage] = useState<string>(
+    'https://api.deepai.org/job-view-file/832bd25d-6c38-49af-9aba-183286d43aff/outputs/output.jpg'
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const clearText = () => {
     setLetter('');
   };
 
-  const onSubmit = async () => {
-    setIsLoading(true);
-    try {
-      const response = await axios.post('/api/textToArt', { text: letter });
-      const image1 = await response.data.image;
-      // console.log(image1);
-      const image2 = await response.data.image2;
-      const image3 = await response.data.image3;
-      const image4 = await response.data.image4;
-      setPreviewImage([image1, image2, image3, image4]);
-      console.log(response);
-      setIsLoading(false);
-      setIsComplete(true);
-    } catch {
-      setIsLoading(false);
-      setIsComplete(false);
+  const imageStyle = [
+    { name: 'Art', api: 'text2img' },
+    { name: 'Cute', api: 'cute-creature-generator' },
+    { name: 'Fantasphere', api: 'fantasy-portrait-generator' },
+    { name: 'Cyberverse', api: 'cyberpunk-portrait-generator' },
+    { name: 'Dreamlike', api: 'surreal-portrait-generator' },
+    { name: 'Comics', api: 'comics-portrait-generator' },
+    { name: 'Modernity', api: 'future-architecture-generator' },
+    { name: 'Graffiti-art', api: 'street-art-generator' },
+    { name: '3D-Origami', api: 'origami-3d-generator' },
+    { name: '3D-Hologram', api: 'hologram-3d-generator' },
+    { name: 'Retro-Innovation', api: 'steampunk-generator' },
+  ];
+
+  const onSubmit = () => {
+    if (selectedStyle) {
+      setIsLoading(true);
+      deepai
+      // @ts-ignore
+        .callStandardApi(selectedStyle, {
+          text: letter,
+          // @ts-ignore
+          grid_size: '1',
+        })
+        .then((resp) => {
+          setPreviewImage(resp.output_url);
+          setIsComplete(true);
+          setIsLoading(false);
+        });
     }
+
+    // try {
+    //   const response = await axios.post('/api/textToArt', { text: letter });
+    //   const image1 = await response.data.image;
+    //   // console.log(image1);
+    //   const image2 = await response.data.image2;
+    //   const image3 = await response.data.image3;
+    //   const image4 = await response.data.image4;
+    //   setPreviewImage([image1, image2, image3, image4]);
+    //   console.log(response);
+    //   setIsLoading(false);
+    //   setIsComplete(true);
+    // } catch {
+    //   setIsLoading(false);
+    //   setIsComplete(false);
+    // }
   };
   function downloadImage() {
     const link = document.createElement('a');
@@ -40,8 +73,7 @@ const CreateTextToArt = () => {
       link.click();
     });
   }
-
-
+  const [selectedStyle, setSelectedStyle] = useState('');
   return (
     <div className=" w-full h-full flex flex-col items-center py-[10%] px-10 ">
       <h1 className=" text-[36px] font-black text-white mb-8">
@@ -52,28 +84,9 @@ const CreateTextToArt = () => {
           <RingLoader size={241} color="white" className="my-auto" />
         </>
       ) : isComplete ? (
-        <div className=" flex w-full items-center justify-center gap-x-[5%]">
-          <div className="  gap-3 grid grid-cols-2">
-            <img
-              className=" w-[200px] h-[200px]"
-              src={`data:image/png;base64,${previewImage[0]}`}
-              alt=""
-            />
-            <img
-              className=" w-[200px] h-[200px]"
-              src={`data:image/png;base64,${previewImage[1]}`}
-              alt=""
-            />
-            <img
-              className=" w-[200px] h-[200px]"
-              src={`data:image/png;base64,${previewImage[2]}`}
-              alt=""
-            />
-            <img
-              className=" w-[200px] h-[200px]"
-              src={`data:image/png;base64,${previewImage[3]}`}
-              alt=""
-            />
+        <div className=" flex items-center justify-center gap-x-[5%] complete-bg w-fit py-5 px-[60px]">
+          <div className=" w-[397px] h-[408px]">
+            <img className=" w-full h-full" src={`${previewImage}`} alt="" />
           </div>
           <div className=" flex flex-col text-white text-[18px] font-bold items-center justify-center ">
             {letter}
@@ -101,7 +114,7 @@ const CreateTextToArt = () => {
           <div className=" flex flex-col w-3/4 gap-y-5">
             <div className=" flex items-center justify-between px-[32px]">
               <p className=" text-[24px] font-bold text-transparent textgradient">
-                Enter Text
+                Enter Text Prompt
               </p>
               <p
                 onClick={clearText}
@@ -111,7 +124,7 @@ const CreateTextToArt = () => {
               </p>
             </div>
 
-            <div className=" relative w-full h-[200px]">
+            <div className=" relative w-full h-[93px]">
               <textarea
                 name=""
                 value={letter}
@@ -121,17 +134,42 @@ const CreateTextToArt = () => {
                 placeholder="Describe the image you want to create"
                 id=""
                 maxLength={600}
-                className=" rounded-[15px] bg-white w-full h-[200px] px-[32px] py-[25px] relative"
+                className=" rounded-[15px] bg-white w-full h-[93px] px-[32px] py-[25px] relative"
               ></textarea>
               <p className=" text-[#B0AAAA] text-[16px] font-medium absolute bottom-[2%] right-[1%]">
                 {letter.length}/600
               </p>
+              <p className=" text-[24px] font-bold text-transparent textgradient ml-8 mt-3">
+                Choose the image style
+              </p>
+              <div className=" flex mt-2 w-full items-center  justify-center gap-x-[20px] text-[11px] text-white">
+                {imageStyle.map((style) => {
+                  return (
+                    <div
+                      key={style.name}
+                      onClick={() => {
+                        setSelectedStyle(style.api);
+                      }}
+                      className={` flex flex-col gap-y-2 cursor-pointer whitespace-nowrap items-center justify-center ${
+                        selectedStyle === style.api && ' scale-125'
+                      }`}
+                    >
+                      <img
+                        src={`/images/image_style/${style.name}.png`}
+                        alt=""
+                      />
+                      <p>{style.name}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
+          <div className=" flex"></div>
           <button
             // disabled={!isLoading}
             onClick={onSubmit}
-            className="w-[200px] mt-[80px] py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
+            className="w-[200px] mt-auto py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
           >
             {isLoading ? (
               <PacmanLoader color="white" size={15} />
@@ -144,7 +182,11 @@ const CreateTextToArt = () => {
     </div>
   );
 };
-export function b64toBlob(b64Data: string, contentType = '', sliceSize = 512): Blob {
+export function b64toBlob(
+  b64Data: string,
+  contentType = '',
+  sliceSize = 512
+): Blob {
   const byteCharacters = atob(b64Data);
   const byteArrays = [];
   for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
