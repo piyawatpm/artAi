@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Pricing() {
   return (
-    <div className=' h-full w-full relative flex flex-col items-center  py-[10%] justify-center gap-y-5'>
+    <div className=' h-full w-full relative flex flex-col items-center  py-[10%] justify-center gap-y-5 text-black'>
       <div className=' flex gap-x-2 text-[36px] font-black text-white'>
         <p className='text-[#2DD48F]'>Package</p>
         <p>Credit</p>

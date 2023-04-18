@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import CreationDetail from '../components/CreationDetail';
+import { useRouter } from 'next/router';
 export enum CreationView {
   All = 'ALL',
   TextToArt = 'Text to Art',
@@ -11,9 +12,10 @@ const Creation = () => {
   const [creationView, setCreationView] = useState<CreationView>(
     CreationView.All
   );
+  const router = useRouter();
   const [isReady, setIsReady] = useState(false);
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center gap-y-10 py-[10%] relative">
+    <div className=" w-full  flex flex-col items-center  gap-y-10 h-[645px] py-[40px] relative">
       {creationView === CreationView.All ? (
         <h1 className=" text-[36px] font-bold text-white">
           <span className=" text-[#2DD48F]">Choose</span> a Creation Method
@@ -24,7 +26,7 @@ const Creation = () => {
         </h1>
       )}
       <div
-        className={` flex  w-3/4 h-full items-center justify-center gap-x-10  `}
+        className={` flex  w-3/4 h-full items-center justify-center gap-x-10  my-auto `}
       >
         {creationView !== CreationView.All && (
           <img
@@ -57,7 +59,8 @@ const Creation = () => {
         >
           <div
             onClick={() => {
-              setCreationView(CreationView.TextToArt);
+              // setCreationView(CreationView.TextToArt);
+              router.push('/text-to-art-info');
             }}
             className={` ${
               creationView !== CreationView.TextToArt
@@ -116,7 +119,8 @@ const Creation = () => {
         >
           <div
             onClick={() => {
-              setCreationView(CreationView.SketchToArt);
+              // setCreationView(CreationView.SketchToArt);
+              router.push('/image-to-art-info');
             }}
             className={` ${
               creationView !== CreationView.SketchToArt

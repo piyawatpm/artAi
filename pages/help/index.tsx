@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 const SignIn = () => {
   const router = useRouter();
   return (
-    <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5 text-center">
+    <div className=" flex flex-col text-white  py-[60px] items-center justify-center gap-y-5 text-center">
       <h1 className=" text-[36px] font-bold">Help Centre</h1>
       <div className=" flex items-center justify-center gap-x-5 ">
         <div

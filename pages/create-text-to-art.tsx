@@ -35,7 +35,7 @@ const CreateTextToArt = () => {
     if (selectedStyle) {
       setIsLoading(true);
       deepai
-      // @ts-ignore
+        // @ts-ignore
         .callStandardApi(selectedStyle, {
           text: letter,
           // @ts-ignore
@@ -65,54 +65,56 @@ const CreateTextToArt = () => {
     // }
   };
   function downloadImage() {
-    const link = document.createElement('a');
-    // @ts-ignore
-    previewImage?.forEach((e) => {
-      link.href = URL.createObjectURL(b64toBlob(e, 'image/png'));
-      link.download = 'image.png';
-      link.click();
-    });
+    // const link = document.createElement('a');
+    // console.log(previewImage);
+    // // @ts-ignore
+    // link.href = URL.createObjectURL(b64toBlob(previewImage, 'image/png'));
+    // link.download = 'image.png';
+    // link.click();
   }
   const [selectedStyle, setSelectedStyle] = useState('');
-  return (
-    <div className=" w-full h-full flex flex-col items-center py-[10%] px-10 ">
-      <h1 className=" text-[36px] font-black text-white mb-8">
-        Create <span className=" text-[#2DD48F]">Text to Art</span>
-      </h1>
-      {isLoading ? (
-        <>
-          <RingLoader size={241} color="white" className="my-auto" />
-        </>
-      ) : isComplete ? (
-        <div className=" flex items-center justify-center gap-x-[5%] complete-bg w-fit py-5 px-[60px]">
-          <div className=" w-[397px] h-[408px]">
+  const Complete = () => {
+    return (
+      <div className=" flex flex-col items-center justify-center h-full  w-fit">
+        <div className="w-full h-[574px]">
+          {previewImage && (
             <img className=" w-full h-full" src={`${previewImage}`} alt="" />
-          </div>
-          <div className=" flex flex-col text-white text-[18px] font-bold items-center justify-center ">
-            {letter}
+          )}
+        </div>
+        <div className=" flex flex-col mt-auto  text-white text-[18px] font-bold items-center justify-center ">
+          <p className=" mb-5">{letter}</p>
+          <div className=" flex items-center justify-center gap-x-3">
+            <a href={previewImage} download>
+              <button
+                onClick={downloadImage}
+                className="w-[200px] py-3  flex items-center justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"
+              >
+                <img src="/images/download.png" alt="" />
+                Download
+              </button>
+            </a>
             <button
               onClick={downloadImage}
-              className="w-[200px] py-3  mt-10 text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
+              className="w-[200px] py-3   justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
             >
-              <img src="/images/download.png" alt="" />
-              Download
+              <img src="/images/mint.png" alt="" />
+              Mint
             </button>
-            <FacebookShareButton url={'https://www.artsai.io/'} quote={'title'}>
-              <button
-                // onClick={onSubmit}
-                className="w-[200px] mt-3 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r bg-[#0D9488] flex items-center p-[20%] gap-x-3 mx-auto"
-              >
-                <img src="/images/share.png" alt="" />
-                Shere
-              </button>
-            </FacebookShareButton>
           </div>
         </div>
-      ) : (
-        <>
-          {' '}
-          <div className=" flex flex-col w-3/4 gap-y-5">
-            <div className=" flex items-center justify-between px-[32px]">
+      </div>
+    );
+  };
+  return (
+    <div className=" w-full flex   items-center  py-[40px] h-[900px] px-[150px]  text-black   ">
+      <div className=" w-full  flex gradient-green2 h-[808px] ">
+        <div className=" w-[50%] flex flex-col h-full p-[45px] gradient-black rounded-[40px]">
+          <h1 className=" text-[36px] font-black text-white mb-8">
+            Create <span className=" text-[#2DD48F]">Text to Art</span>
+          </h1>
+
+          <div className=" flex flex-col gap-y-5">
+            <div className=" flex items-center justify-between ">
               <p className=" text-[24px] font-bold text-transparent textgradient">
                 Enter Text Prompt
               </p>
@@ -123,7 +125,6 @@ const CreateTextToArt = () => {
                 Clear text
               </p>
             </div>
-
             <div className=" relative w-full h-[93px]">
               <textarea
                 name=""
@@ -142,7 +143,7 @@ const CreateTextToArt = () => {
               <p className=" text-[24px] font-bold text-transparent textgradient ml-8 mt-3">
                 Choose the image style
               </p>
-              <div className=" flex mt-2 w-full items-center  justify-center gap-x-[20px] text-[11px] text-white">
+              <div className=" grid grid-cols-5 mt-2 w-full items-center  justify-center gap-[20px] text-[11px] text-white">
                 {imageStyle.map((style) => {
                   return (
                     <div
@@ -150,35 +151,41 @@ const CreateTextToArt = () => {
                       onClick={() => {
                         setSelectedStyle(style.api);
                       }}
-                      className={` flex flex-col gap-y-2 cursor-pointer whitespace-nowrap items-center justify-center ${
-                        selectedStyle === style.api && ' scale-125'
-                      }`}
+                      className={` flex flex-col gap-y-2 cursor-pointer whitespace-nowrap items-center justify-center `}
                     >
                       <img
                         src={`/images/image_style/${style.name}.png`}
                         alt=""
+                        className={`${
+                          selectedStyle === style.api && ' scale-125'
+                        }`}
                       />
                       <p>{style.name}</p>
                     </div>
                   );
                 })}
               </div>
-            </div>
+            </div>{' '}
           </div>
-          <div className=" flex"></div>
           <button
             // disabled={!isLoading}
             onClick={onSubmit}
-            className="w-[200px] mt-auto py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
+            className="w-[200px]  py-3  mt-auto  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
           >
             {isLoading ? (
               <PacmanLoader color="white" size={15} />
             ) : (
-              'Create Art'
+              'Generate Art'
             )}
           </button>
-        </>
-      )}
+        </div>
+        <div className=" w-[50%] h-full p-[45px] flex flex-col">
+          {isLoading && (
+            <RingLoader size={401} color="white" className=" mx-auto my-auto" />
+          )}
+          {isComplete && <Complete />}
+        </div>
+      </div>
     </div>
   );
 };

@@ -11,6 +11,7 @@ import ReactCrop, {
 } from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 import { b64toBlob } from './create-text-to-art';
+import deepai from 'deepai';
 function centerAspectCrop(
   mediaWidth: number,
   mediaHeight: number,
@@ -53,7 +54,7 @@ const CreateSkeychToArt = () => {
       reader.readAsDataURL(e.target.files[0]);
     }
   }
-
+  deepai.setApiKey('7a674fc4-34fc-4801-a27e-c34049e322f4');
   function onImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
     if (aspect) {
       const { width, height } = e.currentTarget;
@@ -153,6 +154,23 @@ const CreateSkeychToArt = () => {
       setIsComplete(false);
     }
   };
+
+  const onSubmit2 = () => {
+    setIsLoading(true);
+
+    deepai
+      // @ts-ignore
+      .callStandardApi('toonify', {
+        // @ts-ignore
+        image:
+          'https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png',
+      })
+      .then((resp) => {
+        setPreviewImage(resp.output_url);
+        setIsComplete(true);
+        setIsLoading(false);
+      });
+  };
   function downloadImage() {
     const link = document.createElement('a');
     // @ts-ignore
@@ -170,6 +188,7 @@ const CreateSkeychToArt = () => {
         accept="image/*"
         className=" bg-red-500 hidden"
         ref={uploadRef}
+        id="art"
         onChange={onSelectFile}
       />
 
@@ -239,25 +258,12 @@ const CreateSkeychToArt = () => {
             )}
           </div>
         </div>
-        <div className=" flex flex-col gap-y-1">
-          <p className=" text-[16px]font-bold text-white">image Details</p>
-          <textarea
-            name=""
-            id=""
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value);
-            }}
-            className=" flex-1 p-2 rounded-[15px]"
-            rows={3}
-          ></textarea>
-        </div>
       </div>
       <button
-        onClick={onSubmit}
+        onClick={onSubmit2}
         className="w-[200px] mt-10 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto"
       >
-        Create Art
+        Generate Art
       </button>
     </div>
   );

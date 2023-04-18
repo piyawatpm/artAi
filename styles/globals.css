@@ -1,13 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-#__next{
+body {
+  font-family: "poppins", sans-serif;
+  color: white;
+  background: radial-gradient(99.14% 266.98% at 100% 0%, #161F2C 0%, #12323F 22.52%, #000000 100%) ;
+  word-spacing: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
   height: 100%;
+  margin: auto;
 }
-html, body {
-  height: 100%;
-  /* overflow: hidden; */
+*{
   font-family: 'Poppins', sans-serif;
+}
+.gradient-blue{
+  background: rgba(68, 104, 197, 0.23);
+backdrop-filter: blur(10px);
 }
 .bg{
   background: radial-gradient(99.14% 266.98% at 100% 0%, #161F2C 0%, #12323F 22.52%, #000000 100%) 
@@ -88,4 +98,81 @@ border-radius: 17.4676px;
   background: linear-gradient(179.9deg, rgba(247, 247, 247, 0.16) 0.09%, rgba(1, 15, 13, 0) 110.65%);
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 border-radius: 47px;
+}
+
+.accordion-section + .accordion-section {
+  border-top: 0;
+  color: #fff;
+}
+
+.accordion-section a {
+  text-align: left;
+  display: block;
+  appearance: none;
+  width: 100%;
+  border-bottom: rgb(107 114 128) 1px solid;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/*.accordion-section button:hover {
+ background-color: #eff0f3;
+}*/
+
+.accordion-section__content--active {
+  color: #fff;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.image-wrapper {
+  background: rgba(0, 0, 0, 0.2);
+  bottom: -50px;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  transition: bottom 0.15s linear;
+  width: 100%;
+}
+
+.hidden-input {
+  left: -999px;
+  position: absolute;
+}
+
+.edit {
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  top: 10px;
+}
+
+.container{
+  background: linear-gradient(180deg, #05171F 0%, rgba(70, 64, 64, 0) 100%);
+border-radius: 26px;
+}
+.textgradient-sea{
+  background: linear-gradient(267.18deg, #0D9488 9.8%, #4468C5 99.4%, #8C70DC 99.41%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.gradient-green2{
+  background: linear-gradient(180deg, #0D9488 0%, rgba(217, 217, 217, 0) 100%);
+border-radius: 40px;
+}
+.gradient-black{
+  background: linear-gradient(180deg, #000215 0%, rgba(102, 102, 102, 0) 95.67%);
+border-radius: 40px;
 }
