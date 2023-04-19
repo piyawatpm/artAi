@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 const Catagories = () => {
   const router = useRouter();
   return (
-    <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5">
-      <div className=" w-full flex items-center justify-center gap-x-20 mt-12">
+    <div className=" flex flex-col text-white  py-[30px] h-[645px] items-center justify-center gap-y-5">
+      <div className=" w-full flex items-center justify-center gap-x-20 ">
         <div className=" ">
           <img src="/images/ai-ads.png" alt="" />
         </div>
@@ -21,7 +21,7 @@ const Catagories = () => {
           </p>
           <Link
             href={'/create-ads/step1'}
-            className=" w-full mx-auto py-3  text-[18px] font-medium text-white rounded-[15px] bg-gradient-to-l from-[#F86C75] via-[#5E25FF] to-[#4468C5] flex items-center justify-center mx-auto'"
+            className=" w-full mx-auto py-3   text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-l from-[#F86C75] via-[#5E25FF] to-[#4468C5] flex items-center justify-center mx-auto'"
           >
           Create Now
           </Link>

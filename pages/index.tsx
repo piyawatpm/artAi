@@ -91,7 +91,7 @@ function Home() {
           </div>
         </div>
       </Transition>
-      <div className=" gradient-blue px-[53px] sm:py-[46px] justify-between sm:rounded-[45px] w-full h-fit gap-y-10 flex flex-col">
+      <div className=" bg-[#030303]/[23%] px-[53px] sm:py-[46px] justify-between sm:rounded-[45px] w-full h-fit gap-y-10 flex flex-col">
         <div className=" flex sm:flex-row flex-col w-full h-1/2">
           <div className=" sm:w-1/2 flex flex-col">
             <p className=" text-[#406CC0] text-[16px] font-medium">
@@ -123,7 +123,13 @@ function Home() {
           </div>
         </div>
         <div className=" flex w-full h-1/2 text-end ">
-          <div className=" w-1/2 h-full "></div>
+          <div className=" w-1/2 h-full flex items-center justify-center ">
+            <img
+              src="/images/index/image-to-image.gif"
+              className=" w-[400px] h-[290px]"
+              alt=""
+            />
+          </div>
           <div className=" w-1/2 flex flex-col justify-end">
             <p className=" text-[#406CC0] text-[16px] font-medium">
               Image to Art
@@ -189,8 +195,8 @@ function Home() {
           Ready for some AI-powered fun?
         </h1>
         <p>
-          Check out these awesome categories below and generate some cool
-          images!
+          Check out these awesome image styles below and generate some cool and
+          exciting images!
         </p>
         <div className=" grid grid-cols-6 my-10 gap-y-4">
           {imageStyle.map((style) => {
@@ -211,28 +217,32 @@ function Home() {
         </div>
       </div>
       <div className=" flex flex-col justify-center items-center  w-full text-center my-[50px]  text-white">
-        <h1 className=" text-[28px] font-bold mb-[30px]">
+       
+        <div className=" flex flex-col items-start">
+        <h1 className=" text-[28px] font-bold -translate-x-[15px]">
           Unleash Your Creativity with Our AI Tools
         </h1>
-        <ul className=" text-[16px] font-medium list-decimal justify-center text-left max-w-[600px]">
-          <li>Join Us Today by Signing Up to Create Your Account!</li>
-          <li>
-            {
-              "View Package Details and Purchase Credits on Our 'Package Credit' Page!"
-            }
-          </li>
-          <li>
-            Explore Our AI Tools - Choose from Text-to-Image, Image-to-Image,
-            Social Ads, and Photo Effects!
-          </li>
-          <li>
-            Follow the Easy Instructions for Your Selected AI Tool and Create
-            Amazing Results!
-          </li>
-          <li>
-            Download Your Generated Files and Enjoy Your Stunning Creations!
-          </li>
-        </ul>
+          {' '}
+          <ul className=" text-[16px] font-medium list-decimal justify-center text-left ">
+            <li>Join Us Today by Signing Up to Create Your Account!</li>
+            <li>
+              {
+                "View Package Details and Purchase Credits on Our 'Package Credit' Page!"
+              }
+            </li>
+            <li>
+              Explore Our AI Tools - Choose from Text-to-Image, Image-to-Image,
+              Social Ads, and Photo Effects!
+            </li>
+            <li>
+              Follow the Easy Instructions for Your Selected AI Tool and Create
+              Amazing Results!
+            </li>
+            <li>
+              Download Your Generated Files and Enjoy Your Stunning Creations!
+            </li>
+          </ul>
+        </div>
       </div>
       <div className=" flex flex-col items-center justify-start my-[50px] gap-y-3 w-full">
         <p className=" font-medium text-[16px] text-center mx-auto w-fit">

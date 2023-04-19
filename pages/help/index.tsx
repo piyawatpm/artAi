@@ -111,7 +111,7 @@ const SignIn = () => {
           }}
           className=" w-[110px]  bg-[#F4F4F4] text-black text-[10px] font-bolds h-[110px] rounded-[17px] px-[14px] font-bold cursor-pointer help_box flex flex-col items-center justify-center"
         >
-        What is ARTsAi's Text to Image technology?
+          What is ARTsAi's Text to Image technology?
         </div>
         <div
           onClick={() => {
@@ -148,7 +148,12 @@ const SignIn = () => {
       </div>
       <h1 className=" text-[36px] font-bold">Get more help</h1>
       <div className=" flex items-center justify-center gap-x-5">
-        <div className=" w-[110px] text-black bg-[#F4F4F4]  text-[10px] font-bolds h-[110px] rounded-[17px] px-[14px] font-bold cursor-pointer help_box flex flex-col items-center justify-center">
+        <div
+          onClick={() => {
+            router.push('/docs-and-resources');
+          }}
+          className=" w-[110px] text-black bg-[#F4F4F4]  text-[10px] font-bolds h-[110px] rounded-[17px] px-[14px] font-bold cursor-pointer help_box flex flex-col items-center justify-center"
+        >
           <img src="/images/help/doc.png" alt="" />
           <p>
             Docs and <br />

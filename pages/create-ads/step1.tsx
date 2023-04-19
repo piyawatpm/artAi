@@ -6,7 +6,7 @@ const Catagories = () => {
   const router = useRouter();
   const [size, setSize] = useState();
   return (
-    <div className=" flex flex-col text-white py-[10%] items-center justify-center gap-y-5">
+    <div className=" flex flex-col text-white items-center  py-[30px] h-[645px] justify-center gap-y-5">
       <p className=" text-[36px] font-bold">
         <span className="text-[#8C70DC]">Step 1 :</span> Select Creative Size{' '}
       </p>

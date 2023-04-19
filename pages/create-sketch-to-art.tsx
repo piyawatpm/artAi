@@ -44,7 +44,9 @@ const CreateSkeychToArt = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [text, setText] = useState('');
+  const [newImage, setNewImage] = useState<File | null>(null);
   function onSelectFile(e: React.ChangeEvent<HTMLInputElement>) {
+    setNewImage(e.target.files![0]);
     if (e.target.files && e.target.files.length > 0) {
       setCrop(undefined); // Makes crop preview update between images.
       const reader = new FileReader();
@@ -156,20 +158,20 @@ const CreateSkeychToArt = () => {
   };
 
   const onSubmit2 = () => {
-    setIsLoading(true);
-
-    deepai
-      // @ts-ignore
-      .callStandardApi('toonify', {
-        // @ts-ignore
-        image:
-          'https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png',
-      })
-      .then((resp) => {
-        setPreviewImage(resp.output_url);
-        setIsComplete(true);
-        setIsLoading(false);
-      });
+    // console.log(newImage);
+    // setIsLoading(true);
+    // const data = new FormData();
+    // data.append('image', newImage!);
+    // deepai
+    //   .callStandardApi('toonify', {
+    //     image:
+    //       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1600px-Image_created_with_a_mobile_phone.png',
+    //   })
+    //   .then((resp) => {
+    //     setPreviewImage(resp.output_url);
+    //     setIsComplete(true);
+    //     setIsLoading(false);
+    //   });
   };
   function downloadImage() {
     const link = document.createElement('a');

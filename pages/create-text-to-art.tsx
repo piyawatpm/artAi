@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { FacebookShareButton } from 'react-share';
 import { PacmanLoader, RingLoader } from 'react-spinners';
 import deepai from 'deepai';
+import { useRouter } from 'next/router';
 deepai.setApiKey('7a674fc4-34fc-4801-a27e-c34049e322f4');
 
 const CreateTextToArt = () => {
@@ -16,7 +17,7 @@ const CreateTextToArt = () => {
   const clearText = () => {
     setLetter('');
   };
-
+  const router = useRouter();
   const imageStyle = [
     { name: 'Art', api: 'text2img' },
     { name: 'Cute', api: 'cute-creature-generator' },
@@ -29,6 +30,7 @@ const CreateTextToArt = () => {
     { name: '3D-Origami', api: 'origami-3d-generator' },
     { name: '3D-Hologram', api: 'hologram-3d-generator' },
     { name: 'Retro-Innovation', api: 'steampunk-generator' },
+    { name: 'Pop-Art', api: 'pop-art-generator' },
   ];
 
   const onSubmit = () => {
@@ -76,26 +78,41 @@ const CreateTextToArt = () => {
   const Complete = () => {
     return (
       <div className=" flex flex-col items-center justify-center h-full  w-fit">
-        <div className="w-full h-[574px]">
-          {previewImage && (
-            <img className=" w-full h-full" src={`${previewImage}`} alt="" />
+        <div className="w-[580px] h-[580px]">
+          {isComplete ? (
+            previewImage && (
+              <img className=" w-full h-full" src={`${previewImage}`} alt="" />
+            )
+          ) : (
+            <div className=" w-full h-full flex items-center justify-center bg-[#000215]">
+              {' '}
+              {isLoading && (
+                <RingLoader
+                  size={401}
+                  color="white"
+                  className=" mx-auto my-auto"
+                />
+              )}
+            </div>
           )}
         </div>
         <div className=" flex flex-col mt-auto  text-white text-[18px] font-bold items-center justify-center ">
-          <p className=" mb-5">{letter}</p>
+          <p className=" mb-5">{isComplete && letter}</p>
           <div className=" flex items-center justify-center gap-x-3">
             <a href={previewImage} download>
               <button
                 onClick={downloadImage}
-                className="w-[200px] py-3  flex items-center justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"
+                className="w-[200px] h-[51px] py-3  flex items-center justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"
               >
                 <img src="/images/download.png" alt="" />
                 Download
               </button>
             </a>
             <button
-              onClick={downloadImage}
-              className="w-[200px] py-3   justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
+              onClick={() => {
+                router.push('https://oceansky.io/create-single');
+              }}
+              className="w-[200px] py-3 h-[51px]  justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
             >
               <img src="/images/mint.png" alt="" />
               Mint
@@ -106,8 +123,8 @@ const CreateTextToArt = () => {
     );
   };
   return (
-    <div className=" w-full flex   items-center  py-[40px] h-[900px] px-[150px]  text-black   ">
-      <div className=" w-full  flex gradient-green2 h-[808px] ">
+    <div className=" w-full flex   items-center  py-[40px] h-[900px] px-[130px]  text-black   ">
+      <div className=" w-full  flex  h-[808px] ">
         <div className=" w-[50%] flex flex-col h-full p-[45px] gradient-black rounded-[40px]">
           <h1 className=" text-[36px] font-black text-white mb-8">
             Create <span className=" text-[#2DD48F]">Text to Art</span>
@@ -180,10 +197,7 @@ const CreateTextToArt = () => {
           </button>
         </div>
         <div className=" w-[50%] h-full p-[45px] flex flex-col">
-          {isLoading && (
-            <RingLoader size={401} color="white" className=" mx-auto my-auto" />
-          )}
-          {isComplete && <Complete />}
+          <Complete />
         </div>
       </div>
     </div>
