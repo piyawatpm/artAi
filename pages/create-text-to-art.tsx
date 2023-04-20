@@ -78,21 +78,23 @@ const CreateTextToArt = () => {
   const Complete = () => {
     return (
       <div className=" flex flex-col items-center justify-center h-full  w-fit">
-        <div className="w-[580px] h-[580px]">
+        <div className=" w-full mx-auto h-[300px] xl:w-[580px] xl:h-[580px]">
           {isComplete ? (
             previewImage && (
               <img className=" w-full h-full" src={`${previewImage}`} alt="" />
             )
           ) : (
-            <div className=" w-full h-full flex items-center justify-center bg-[#000215]">
+            <div className=" w-full h-full flex items-center justify-center black">
               {' '}
               {isLoading && (
                 <RingLoader
-                  size={401}
+                  size={301}
+                  
                   color="white"
-                  className=" mx-auto my-auto"
+                  className=" mx-auto my-auto  hidden"
                 />
               )}
+          
             </div>
           )}
         </div>
@@ -102,9 +104,9 @@ const CreateTextToArt = () => {
             <a href={previewImage} download>
               <button
                 onClick={downloadImage}
-                className="w-[200px] h-[51px] py-3  flex items-center justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"
+                className="w-[150px] xl:w-[200px] h-[40px] xl:h-[51px] py-3  flex items-center justify-center text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"
               >
-                <img src="/images/download.png" alt="" />
+                <img src="/images/download.png" className='xl:w-auto w-[24px] xl:h-auto h-[25px]' alt="" />
                 Download
               </button>
             </a>
@@ -112,9 +114,9 @@ const CreateTextToArt = () => {
               onClick={() => {
                 router.push('https://oceansky.io/create-single');
               }}
-              className="w-[200px] py-3 h-[51px]  justify-center text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
+              className="w-[150px] xl:w-[200px] py-3 h-[40px] xl:h-[51px]  justify-center text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
             >
-              <img src="/images/mint.png" alt="" />
+              <img src="/images/mint.png" className='xl:w-auto w-[24px] xl:h-auto h-[25px]' alt="" />
               Mint
             </button>
           </div>
@@ -123,26 +125,26 @@ const CreateTextToArt = () => {
     );
   };
   return (
-    <div className=" w-full flex   items-center  py-[40px] h-[900px] px-[130px]  text-black   ">
-      <div className=" w-full  flex  h-[808px] ">
-        <div className=" w-[50%] flex flex-col h-full p-[45px] gradient-black rounded-[40px]">
-          <h1 className=" text-[36px] font-black text-white mb-8">
+    <div className=" w-full flex   items-center  py-[40px]  px-[38px] xl:px-[130px]  text-black   ">
+      <div className=" w-full  flex  xl:flex-row flex-col  ">
+        <div className=" xl:w-[50%] flex flex-col  p-[20px] xl:p-[45px] gradient-black rounded-[40px]">
+          <h1 className=" text-[21px] xl:text-[36px] font-black text-white xl:mb-8">
             Create <span className=" text-[#2DD48F]">Text to Art</span>
           </h1>
 
-          <div className=" flex flex-col gap-y-5">
+          <div className=" flex flex-col xl:mt-0 mt-4 gap-y-2 xl:gap-y-5">
             <div className=" flex items-center justify-between ">
-              <p className=" text-[24px] font-bold text-transparent textgradient">
+              <p className=" text-[12px] xl:text-[24px] font-bold text-transparent textgradient">
                 Enter Text Prompt
               </p>
               <p
                 onClick={clearText}
-                className=" cursor-pointer text-[18px] font-bold text-white underline"
+                className=" cursor-pointer text-[10px] xl:text-[18px] font-bold text-white underline"
               >
                 Clear text
               </p>
             </div>
-            <div className=" relative w-full h-[93px]">
+            <div className=" relative w-full xl:h-[93px]">
               <textarea
                 name=""
                 value={letter}
@@ -152,15 +154,17 @@ const CreateTextToArt = () => {
                 placeholder="Describe the image you want to create"
                 id=""
                 maxLength={600}
-                className=" rounded-[15px] bg-white w-full h-[93px] px-[32px] py-[25px] relative"
+                className=" rounded-[15px] bg-white w-full h-[93px] xl:px-[32px] p-4 xl:py-[25px] relative"
               ></textarea>
-              <p className=" text-[#B0AAAA] text-[16px] font-medium absolute bottom-[2%] right-[1%]">
+              <p className=" text-[#B0AAAA] text-[16px] font-medium hidden xl:absolute bottom-[2%] right-[1%]">
                 {letter.length}/600
               </p>
-              <p className=" text-[24px] font-bold text-transparent textgradient ml-8 mt-3">
+          
+            </div>
+            <p className=" text-[16px] xl:text-[24px] font-bold text-transparent textgradient xl:text-left text-center xl:ml-8 mt-3">
                 Choose the image style
               </p>
-              <div className=" grid grid-cols-5 mt-2 w-full items-center  justify-center gap-[20px] text-[11px] text-white">
+              <div className=" grid grid-cols-3 xl:grid-cols-5 mt-2 w-full items-center  justify-center gap-3 xl:gap-[25px] text-[11px] text-white">
                 {imageStyle.map((style) => {
                   return (
                     <div
@@ -175,28 +179,25 @@ const CreateTextToArt = () => {
                         alt=""
                         className={`${
                           selectedStyle === style.api && ' scale-125'
-                        }`}
+                        }  w-[60px] xl:w-[80px] h-[60px] xl:h-[80px]`}
                       />
-                      <p>{style.name}</p>
+                      <p className=" xl:text-[16px] text-[10px]">
+                        {style.name}
+                      </p>
                     </div>
                   );
                 })}
               </div>
-            </div>{' '}
           </div>
           <button
             // disabled={!isLoading}
             onClick={onSubmit}
-            className="w-[200px]  py-3  mt-auto  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
+            className="xl:w-[200px] xl:px-0 px-5 py-2 xl:py-3 mt-5 xl:mt-10 text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
           >
-            {isLoading ? (
-              <PacmanLoader color="white" size={15} />
-            ) : (
-              'Generate Art'
-            )}
+             Generate Art
           </button>
         </div>
-        <div className=" w-[50%] h-full p-[45px] flex flex-col">
+        <div className=" xl:w-[50%] h-full py-[20px] xl:p-[45px] flex flex-col items-center">
           <Complete />
         </div>
       </div>

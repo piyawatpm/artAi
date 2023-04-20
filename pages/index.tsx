@@ -14,7 +14,7 @@ import {
 const imageStyle = [
   { name: 'Art', api: 'text2img' },
   { name: 'Cute', api: 'cute-creature-generator' },
-  { name: 'Cartoonize', api: '' },
+  { name: 'PopSonic', api: '' },
   { name: 'Fantasphere', api: 'fantasy-portrait-generator' },
   { name: 'Cyberverse', api: 'cyberpunk-portrait-generator' },
   { name: 'Dreamlike', api: 'surreal-portrait-generator' },
@@ -91,16 +91,16 @@ function Home() {
           </div>
         </div>
       </Transition>
-      <div className=" bg-[#030303]/[23%] px-[53px] sm:py-[46px] justify-between sm:rounded-[45px] w-full h-fit gap-y-10 flex flex-col">
+      <div className=" max-w-screen-xl mx-auto bg-[#030303]/[23%] p-5 xl:px-[53px] sm:py-[46px] justify-between rounded-[20px] sm:rounded-[45px] w-full h-fit gap-y-10 flex flex-col">
         <div className=" flex sm:flex-row flex-col w-full h-1/2">
           <div className=" sm:w-1/2 flex flex-col">
-            <p className=" text-[#406CC0] text-[16px] font-medium">
+            <p className=" text-[#406CC0] text-[10px] xl:text-[16px] font-medium">
               Text to Art
             </p>
-            <p className="text-[36px] font-bold text-white">
+            <p className="text-[21px] xl:text-[36px] font-bold text-white">
               Transform TEXT into IMAGE with AI
             </p>
-            <p className=" text-[16px] text-white font-medium">
+            <p className=" text-[10px] xl:text-[16px] text-white font-medium">
               Turn Words into Lifelike Images with Text-to-Image AI! Create
               Beautiful, Realistic Images with Simple Text Descriptions. Perfect
               for Artists & Creatives. Try Now!
@@ -109,96 +109,132 @@ function Home() {
               onClick={() => {
                 router.push('/create-text-to-art');
               }}
-              className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex items-center justify-center mr-auto mt-3"
+              className=" xl:flex hidden py-2 px-9 text-[10px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC]  items-center justify-center mr-auto mt-3"
             >
               Generate
             </button>
           </div>
-          <div className=" w-1/2 h-full   flex items-center justify-center">
+          <div className=" xl:w-1/2 h-full   flex items-center justify-center">
             <img
               src="/images/index/text-to-art.gif"
-              className=" scale-[80%]"
+              className=" xl:scale-[80%] xl:my-0 my-5 "
               alt=""
             />
           </div>
+          {/* button for mobile */}
+          <button
+            onClick={() => {
+              router.push('/create-text-to-art');
+            }}
+            className=" py-2 px-5 xl:px-9 mx-auto text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex xl:hidden items-center justify-center mr-auto mt-3"
+          >
+            Generate
+          </button>
         </div>
-        <div className=" flex w-full h-1/2 text-end ">
-          <div className=" w-1/2 h-full flex items-center justify-center ">
+        <div className=" flex w-full xl:flex-row flex-col-reverse h-1/2 xl:text-end ">
+          <button className=" py-2 px-5 xl:px-9  mx-auto text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex xl:hidden items-center justify-center ml-auto mt-3">
+            Generate
+          </button>
+          <div className=" xl:w-1/2 h-full flex items-center justify-center ">
             <img
               src="/images/index/image-to-image.gif"
-              className=" w-[400px] h-[290px]"
+              className=" xl:w-[400px] xl:h-[290px] xl:my-0 my-5"
               alt=""
             />
           </div>
-          <div className=" w-1/2 flex flex-col justify-end">
-            <p className=" text-[#406CC0] text-[16px] font-medium">
+          <div className=" xl:w-1/2 flex flex-col xl:justify-end">
+            <p className=" text-[#406CC0] text-[10px] xl:text-[16px] font-medium">
               Image to Art
             </p>
-            <p className="text-[36px] font-bold text-white">
+            <p className="text-[21px] xl:text-[36px] font-bold text-white">
               Revolutionary Image-to-Image AI Technology
             </p>
-            <p className=" text-[16px] text-white font-medium">
+            <p className=" text-[10px] xl:text-[16px] text-white font-medium">
               Transform Your Images with AI Magic! Adjust Colors, Lighting & Add
               Effects with Ease. Perfect for Photographers, Designers &
               Hobbyists. Try Now!
             </p>
-            <button className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex items-center justify-center ml-auto mt-3">
+            <button
+              onClick={() => {
+                router.push('image-to-art-info');
+              }}
+              className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center ml-auto mt-3"
+            >
               Generate
             </button>
           </div>
         </div>
       </div>
-      <div className=" gradient-blue px-[53px] mt-[50px] py-[46px] justify-between rounded-[45px] w-full h-fit flex flex-col">
-        <div className=" flex w-full">
-          <div className=" w-1/2 flex flex-col">
-            <p className=" text-[#406CC0] text-[16px] font-medium">
+      <div className=" max-w-screen-xl mx-auto gradient-blue p-5 xl:px-[53px] mt-[50px] xl:py-[46px] justify-between rounded-[20px] xl:rounded-[45px] w-full h-fit flex flex-col">
+        <div className=" flex w-full xl:flex-row flex-col">
+          <div className=" xl:w-1/2 flex flex-col">
+            <p className=" text-[#406CC0] text-[10px] xl:text-[16px] font-medium">
               Image to Animation
             </p>
-            <p className="text-[36px] font-bold text-white">
+            <p className="text-[21px] xl:text-[36px] font-bold text-white">
               AI-GENERATED ANIMATIONS image TO ANIMATION
             </p>
-            <p className=" text-[16px] text-white font-medium">
+            <p className=" text-[10px] xl:text-[16px] text-white font-medium">
               Created image to animation is an exciting new concept that allows
               artists and creators to transform their drawings into personalized
               and visually stunning animations. Try Now!
             </p>
-            <button className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex items-center justify-center mr-auto mt-3">
+            <button className=" py-2 px-9  xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center mr-auto mt-3">
               Generate
             </button>
           </div>
-          <div className=" w-1/2 h-full "></div>
+          <div className=" xl:w-1/2 h-full flex items-center justify-center ">
+            <img
+              src="/images/index/image-to-animation.png"
+              className=" xl:my-0 my-5"
+              alt=""
+            />
+          </div>
+          <button className=" py-2 px-5 xl:px-9 text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC]  mx-auto xl:hidden flex items-center justify-center mr-auto mt-3">
+            Generate
+          </button>
         </div>
       </div>
-      <div className=" gradient-blue px-[53px] mt-[50px] py-[46px] justify-between rounded-[45px] w-full h-fit flex flex-col">
-        <div className=" flex w-full  ">
-          <div className=" w-1/2 h-full "></div>
-          <div className=" w-1/2 flex flex-col text-end">
-            <p className=" text-[#0D9488] text-[16px] font-medium">
+      <div className=" max-w-screen-xl mx-auto gradient-blue p-5 xl:px-[53px] mt-[50px] xl:py-[46px] justify-between rounded-[20px] xl:rounded-[45px] w-full h-fit flex flex-col">
+        <div className=" flex w-full xl:flex-row flex-col-reverse  ">
+          <button className=" py-2 px-5 xl:px-9 text-[12px] mx-auto xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] xl:hidden flex items-center justify-center ml-auto mt-3">
+            Generate
+          </button>
+          <div className=" xl:w-1/2 h-full flex items-center justify-center ">
+            <img src="/images/index/ai-ads.png" alt="" />
+          </div>
+          <div className=" xl:w-1/2 flex flex-col xl:text-end">
+            <p className=" text-[#0D9488] text-[10px] xl:text-[16px] font-medium">
               AI Social Ads
             </p>
-            <p className="text-[36px] font-bold text-white uppercase leading-[40px] my-3">
+            <p className="text-[21px] xl:text-[36px] font-bold text-white uppercase xl:leading-[40px] xl:my-3">
               Transform Your Social Ads with AI-Powered Creator!
             </p>
-            <p className=" text-[16px] text-white font-medium">
+            <p className=" text-[10px] xl:text-[16px] text-white font-medium">
               Create Eye-Catching Social Ads Effortlessly with Our AI-Powered
               Tool! Select Ad Size, Input Brand Details & Fine-Tune Ad Options.
               Save Time & Boost Ad Effectiveness - Try Now!
             </p>
-            <button className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex items-center justify-center ml-auto mt-3">
+            <button
+              onClick={() => {
+                router.push('/social-ads-info');
+              }}
+              className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center ml-auto mt-3"
+            >
               Generate
             </button>
           </div>
         </div>
       </div>
-      <div className=" flex flex-col justify-center items-center  w-full text-center mt-[50px]  text-white">
-        <h1 className=" text-[28px] font-bold mb-[30px]">
+      <div className=" max-w-screen-xl mx-auto flex flex-col justify-center items-center  w-full text-center mt-[50px]  text-white">
+        <h1 className=" text-[21px] xl:text-[28px] font-bold mb-5 xl:mb-[30px]">
           Ready for some AI-powered fun?
         </h1>
-        <p>
+        <p className=" xl:text-[16px] text-[10px]">
           Check out these awesome image styles below and generate some cool and
           exciting images!
         </p>
-        <div className=" grid grid-cols-6 my-10 gap-y-4">
+        <div className=" grid grid-cols-4 xl:grid-cols-6 my-10 gap-y-4">
           {imageStyle.map((style) => {
             return (
               <div
@@ -207,23 +243,24 @@ function Home() {
               >
                 <img
                   src={`/images/image_style/${style.name}.png`}
-                  className=" w-[80px] h-[80px]"
+                  className=" w-[60px] xl:w-[80px] h-[60px] xl:h-[80px]"
                   alt=""
+                  onClick={() => {
+                    router.push('/docs-and-resources');
+                  }}
                 />
-                <p>{style.name}</p>
+                <p className=" xl:text-[16px] text-[10px]">{style.name}</p>
               </div>
             );
           })}
         </div>
       </div>
-      <div className=" flex flex-col justify-center items-center  w-full text-center my-[50px]  text-white">
-       
+      <div className=" max-w-screen-xl mx-auto flex flex-col justify-center items-center  w-full text-center my-[50px]  text-white">
         <div className=" flex flex-col items-start">
-        <h1 className=" text-[28px] font-bold -translate-x-[15px]">
-          Unleash Your Creativity with Our AI Tools
-        </h1>
-          {' '}
-          <ul className=" text-[16px] font-medium list-decimal justify-center text-left ">
+          <h1 className=" text-[21px] xl:text-[28px] font-bold -translate-x-[15px]">
+            Unleash Your Creativity with Our AI Tools
+          </h1>{' '}
+          <ul className=" text-[10px] xl:mt-0 mt-3 xl:text-[16px] font-medium list-decimal justify-center text-left ">
             <li>Join Us Today by Signing Up to Create Your Account!</li>
             <li>
               {
@@ -244,50 +281,50 @@ function Home() {
           </ul>
         </div>
       </div>
-      <div className=" flex flex-col items-center justify-start my-[50px] gap-y-3 w-full">
-        <p className=" font-medium text-[16px] text-center mx-auto w-fit">
+      <div className=" max-w-screen-xl mx-auto flex flex-col items-center justify-start my-[50px] gap-y-3 w-full">
+        <p className=" font-medium text-[10px] xl:text-[16px] text-center mx-auto w-fit">
           Join community
         </p>
         <div className=" flex gap-x-5 items-center">
           <img
             src="/images/social/discord-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
             src="/images/social/telegram-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
             src="/images/social/facebook-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
             src="/images/social/instragram-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[26px] xl:auto"
           />
           <img
             src="/images/social/linked-in-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[25px] xl:auto"
           />
           <img
             src="/images/social/twitter-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
             src="/images/social/youtube-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
             src="/images/social/tiktok-g.png"
             alt=""
-            className=" cursor-pointer"
+            className=" cursor-pointer w-[20px] xl:w-auto"
           />
         </div>
       </div>

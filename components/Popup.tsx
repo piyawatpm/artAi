@@ -48,7 +48,7 @@ export default function MyModal() {
                   <button onClick={closeModal}>
                     <img
                       src='/images/close.png'
-                      className='top-5 right-5 absolute w-[40px] sm:w-auto sm:scale-75'
+                      className='top-0 xl:top-5 right-0 xl:right-5 absolute w-[40px] sm:w-auto scale-50 sm:scale-75'
                     ></img>
                   </button>
                 </div>

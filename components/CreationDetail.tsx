@@ -63,7 +63,7 @@ const CreationDetail = ({ view }: CreationDetailType) => {
           <p>Images are Ai generated</p>
         </div>
         <Link
-          href={'/create-sketch-to-art'}
+          href={'/create-image-to-art'}
           className="className=' w-2/3 mx-auto py-3  text-[18px] font-medium text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto'"
         >
           Create Art

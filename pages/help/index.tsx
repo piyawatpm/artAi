@@ -160,7 +160,9 @@ const SignIn = () => {
             Resources
           </p>
         </div>
-        <div className=" w-[110px] text-black bg-[#F4F4F4] text-[10px] font-bolds h-[110px] rounded-[17px] px-[14px] font-bold cursor-pointer help_box flex flex-col items-center justify-center">
+        <div   onClick={() => {
+            router.push('/email');
+          }} className=" w-[110px] text-black bg-[#F4F4F4] text-[10px] font-bolds h-[110px] rounded-[17px] px-[14px] font-bold cursor-pointer help_box flex flex-col items-center justify-center">
           <img src="/images/help/email.png" alt="" />
           <p>Email</p>
         </div>

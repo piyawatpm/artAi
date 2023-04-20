@@ -15,9 +15,9 @@ const Creation = () => {
   const router = useRouter();
   const [isReady, setIsReady] = useState(false);
   return (
-    <div className=" w-full  flex flex-col items-center  gap-y-10 h-[645px] py-[40px] relative">
+    <div className=" w-full  flex flex-col items-center  gap-y-10 py-[40px] relative">
       {creationView === CreationView.All ? (
-        <h1 className=" text-[36px] font-bold text-white">
+        <h1 className=" text-[21px] xl:text-[36px] font-bold text-white">
           <span className=" text-[#2DD48F]">Choose</span> a Creation Method
         </h1>
       ) : (
@@ -26,7 +26,7 @@ const Creation = () => {
         </h1>
       )}
       <div
-        className={` flex  w-3/4 h-full items-center justify-center gap-x-10  my-auto `}
+        className={` flex xl:flex-row xl:gap-y-0 gap-y-10 flex-col xl:w-3/4 h-full items-center justify-center gap-x-10  my-auto `}
       >
         {creationView !== CreationView.All && (
           <img
@@ -92,7 +92,7 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className="w-4/5 py-3  text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto">
+              <button className=" w-2/5 xl:w-4/5 py-2 xl:py-3 text-[12px] xl:text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto">
                 Text to Art
               </button>
             )}
@@ -160,8 +160,8 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className=" w-4/5 py-3  text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto">
-                Sketch to Art
+              <button className="  w-2/5 xl:w-4/5 py-2 xl:py-3 text-[12px] xl:text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto">
+                Image to Art
               </button>
             )}
           </div>
@@ -222,8 +222,8 @@ const Creation = () => {
               />
             </div>
             {creationView === CreationView.All && (
-              <button className=" w-4/5 py-3  text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto">
-                Drawing to Animation
+              <button className="  w-2/5 xl:w-4/5 py-2 xl:py-3 text-[12px] xl:text-[18px] font-medium  text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto">
+                Image to Animation
               </button>
             )}
           </div>

@@ -31,7 +31,7 @@ function centerAspectCrop(
     mediaHeight
   );
 }
-const CreateSkeychToArt = () => {
+const CreateImageToArt = () => {
   const [imgSrc, setImgSrc] = useState('');
   const previewCanvasRef = useRef<HTMLCanvasElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -184,7 +184,7 @@ const CreateSkeychToArt = () => {
   }
 
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center py-[7%] ">
+    <div className=" w-full  flex flex-col items-center justify-center py-[40px] px-[20px] xl:px-0 ">
       <input
         type="file"
         accept="image/*"
@@ -194,13 +194,13 @@ const CreateSkeychToArt = () => {
         onChange={onSelectFile}
       />
 
-      <h1 className=" text-[36px] font-black text-white">
+      <h1 className=" text-[21px] xl:text-[36px] font-black text-white my-10">
         Create <span className=" text-[#2DD48F]">Sketch to Art</span>
       </h1>
 
-      <div className=" flex flex-col w-1/2 gap-y-5">
+      <div className=" flex flex-col xl:w-1/2 gap-y-5 w-full">
         <div className=" flex w-full">
-          <div className=" relative w-3/5 flex items-center justify-center mx-auto rounded-[15px] border-2 border-[#0D9488] border-dashed h-[300px] ">
+          <div className=" relative xl:w-3/5 w-full flex items-center justify-center mx-auto rounded-[15px] border-2 border-[#0D9488] border-dashed h-[300px] ">
             {imgSrc ? (
               <>
                 <p
@@ -262,8 +262,8 @@ const CreateSkeychToArt = () => {
         </div>
       </div>
       <button
-        onClick={onSubmit2}
-        className="w-[200px] mt-10 py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto"
+        // onClick={onSubmit2}
+        className="xl:w-[200px] xl:px-0 px-5 opacity-20 mt-10 py-2 xl:py-3  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  to-[#FFB100] flex items-center justify-center mx-auto"
       >
         Generate Art
       </button>
@@ -271,4 +271,4 @@ const CreateSkeychToArt = () => {
   );
 };
 
-export default CreateSkeychToArt;
+export default CreateImageToArt;

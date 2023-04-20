@@ -183,3 +183,10 @@ filter: drop-shadow(-9px 10px 10px rgba(0, 0, 0, 0.25));
 border-radius: 17.4676px;
 padding: 40px;
 }
+.email{
+  background: linear-gradient(180deg, #000215 3.26%, rgba(105, 105, 105, 0) 173.02%);
+border-radius: 33px;
+}
+.black{
+  background: linear-gradient(180deg, #000215 0%, #070A28 95.67%);
+}

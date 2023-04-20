@@ -85,7 +85,7 @@ const CreateTextToArt = () => {
   ];
   return (
     <div className=" w-full h-full flex flex-col items-center py-[53px] px-[200px] justify-center  ">
-      <h1 className=" text-[36px] font-black text-white mb-[28px]">
+      <h1 className=" text-[36px] font-bold text-white mb-[28px]">
         AI Image Style
       </h1>
       {/* fantasphere */}
