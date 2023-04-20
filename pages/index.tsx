@@ -287,6 +287,9 @@ function Home() {
         </p>
         <div className=" flex gap-x-5 items-center">
           <img
+           onClick={()=>{
+            router.push('')
+           }}
             src="/images/social/discord-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
@@ -297,21 +300,30 @@ function Home() {
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
+           onClick={()=>{
+            router.push('https://www.facebook.com/artsaiaus/')
+           }}
             src="/images/social/facebook-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
+           onClick={()=>{
+            router.push('https://www.instagram.com/artsaiaus/')
+           }}
             src="/images/social/instragram-g.png"
             alt=""
-            className=" cursor-pointer w-[26px] xl:auto"
+            className=" cursor-pointer w-[26px] xl:w-auto"
           />
           <img
             src="/images/social/linked-in-g.png"
             alt=""
-            className=" cursor-pointer w-[25px] xl:auto"
+            className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
+          onClick={()=>{
+            router.push(' https://twitter.com/artsaiaus')
+           }}
             src="/images/social/twitter-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
