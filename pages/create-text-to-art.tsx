@@ -5,6 +5,7 @@ import { FacebookShareButton } from 'react-share';
 import { PacmanLoader, RingLoader } from 'react-spinners';
 import deepai from 'deepai';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 deepai.setApiKey('7a674fc4-34fc-4801-a27e-c34049e322f4');
 
 const CreateTextToArt = () => {
@@ -74,6 +75,7 @@ const CreateTextToArt = () => {
     // link.download = 'image.png';
     // link.click();
   }
+
   const [selectedStyle, setSelectedStyle] = useState('');
   const Complete = () => {
     return (
@@ -89,12 +91,10 @@ const CreateTextToArt = () => {
               {isLoading && (
                 <RingLoader
                   size={301}
-                  
                   color="white"
                   className=" mx-auto my-auto  hidden"
                 />
               )}
-          
             </div>
           )}
         </div>
@@ -106,19 +106,29 @@ const CreateTextToArt = () => {
                 onClick={downloadImage}
                 className="w-[150px] xl:w-[200px] h-[40px] xl:h-[51px] py-3  flex items-center justify-center text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"
               >
-                <img src="/images/download.png" className='xl:w-auto w-[24px] xl:h-auto h-[25px]' alt="" />
+                <img
+                  src="/images/download.png"
+                  className="xl:w-auto w-[24px] xl:h-auto h-[25px]"
+                  alt=""
+                />
                 Download
               </button>
             </a>
-            <button
-              onClick={() => {
-                router.push('https://oceansky.io/create-single');
-              }}
+            <Link
+              href={`http://localhost:3001/create-single?image=${previewImage}`}
+              target="_blank"
               className="w-[150px] xl:w-[200px] py-3 h-[40px] xl:h-[51px]  justify-center text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
             >
-              <img src="/images/mint.png" className='xl:w-auto w-[24px] xl:h-auto h-[25px]' alt="" />
-              Mint
-            </button>
+              <img
+                src="/images/mint.png"
+                className="xl:w-auto w-[24px] xl:h-auto h-[25px]"
+                alt=""
+              />
+              <div className=" flex flex-col">
+                <p> Mint NFTs</p>
+                <p>Oceansky.io</p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -159,42 +169,39 @@ const CreateTextToArt = () => {
               <p className=" text-[#B0AAAA] text-[16px] font-medium hidden xl:absolute bottom-[2%] right-[1%]">
                 {letter.length}/600
               </p>
-          
             </div>
             <p className=" text-[16px] xl:text-[24px] font-bold text-transparent textgradient xl:text-left text-center xl:ml-8 mt-3">
-                Choose the image style
-              </p>
-              <div className=" grid grid-cols-3 xl:grid-cols-5 mt-2 w-full items-center  justify-center gap-3 xl:gap-[25px] text-[11px] text-white">
-                {imageStyle.map((style) => {
-                  return (
-                    <div
-                      key={style.name}
-                      onClick={() => {
-                        setSelectedStyle(style.api);
-                      }}
-                      className={` flex flex-col gap-y-2 cursor-pointer whitespace-nowrap items-center justify-center `}
-                    >
-                      <img
-                        src={`/images/image_style/${style.name}.png`}
-                        alt=""
-                        className={`${
-                          selectedStyle === style.api && ' scale-125'
-                        }  w-[60px] xl:w-[80px] h-[60px] xl:h-[80px]`}
-                      />
-                      <p className=" xl:text-[16px] text-[10px]">
-                        {style.name}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
+              Choose the image style
+            </p>
+            <div className=" grid grid-cols-3 xl:grid-cols-5 mt-2 w-full items-center  justify-center gap-3 xl:gap-[25px] text-[11px] text-white">
+              {imageStyle.map((style) => {
+                return (
+                  <div
+                    key={style.name}
+                    onClick={() => {
+                      setSelectedStyle(style.api);
+                    }}
+                    className={` flex flex-col gap-y-2 cursor-pointer whitespace-nowrap items-center justify-center `}
+                  >
+                    <img
+                      src={`/images/image_style/${style.name}.png`}
+                      alt=""
+                      className={`${
+                        selectedStyle === style.api && ' scale-125'
+                      }  w-[60px] xl:w-[80px] h-[60px] xl:h-[80px]`}
+                    />
+                    <p className=" xl:text-[16px] text-[10px]">{style.name}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <button
             // disabled={!isLoading}
             onClick={onSubmit}
             className="xl:w-[200px] xl:px-0 px-5 py-2 xl:py-3 mt-5 xl:mt-10 text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center justify-center mx-auto"
           >
-             Generate Art
+            Generate Art
           </button>
         </div>
         <div className=" xl:w-[50%] h-full py-[20px] xl:p-[45px] flex flex-col items-center">

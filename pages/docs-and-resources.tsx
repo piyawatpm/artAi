@@ -104,8 +104,8 @@ const CreateTextToArt = () => {
                 <h1 className=" text-[24px] font-bold text-[#0D9488] mb-5">
                   {info.header}
                 </h1>
-                <p className=" text-[14px] font-bold">
-                  <span className=" text-[#6ED1D7]">{info.hightlight}</span>
+                <p className=" text-[14px] font-medium">
+                  <span className=" text-[#6ED1D7] font-bold">{info.hightlight}</span>
                   {info.content}
                 </p>
               </div>

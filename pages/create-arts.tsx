@@ -166,7 +166,7 @@ const Creation = () => {
             )}
           </div>
         </Transition>
-        <Transition
+        {/* <Transition
           show={
             creationView === CreationView.All ||
             creationView === CreationView.DrawingToAnimation
@@ -227,7 +227,7 @@ const Creation = () => {
               </button>
             )}
           </div>
-        </Transition>
+        </Transition> */}
         {creationView !== CreationView.All && isReady && (
           <Transition
             show={true}

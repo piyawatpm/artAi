@@ -98,7 +98,7 @@ function Home() {
               Text to Art
             </p>
             <p className="text-[21px] xl:text-[36px] font-bold text-white">
-              Transform TEXT into IMAGE with AI
+              Transform TEXT into Art with AI
             </p>
             <p className=" text-[10px] xl:text-[16px] text-white font-medium">
               Turn Words into Lifelike Images with Text-to-Image AI! Create
@@ -107,7 +107,7 @@ function Home() {
             </p>
             <button
               onClick={() => {
-                router.push('/create-text-to-art');
+                router.push('/text-to-art-info');
               }}
               className=" xl:flex hidden py-2 px-9 text-[10px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC]  items-center justify-center mr-auto mt-3"
             >
@@ -124,7 +124,7 @@ function Home() {
           {/* button for mobile */}
           <button
             onClick={() => {
-              router.push('/create-text-to-art');
+              router.push('/text-to-art-info');
             }}
             className=" py-2 px-5 xl:px-9 mx-auto text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex xl:hidden items-center justify-center mr-auto mt-3"
           >
@@ -132,7 +132,12 @@ function Home() {
           </button>
         </div>
         <div className=" flex w-full xl:flex-row flex-col-reverse h-1/2 xl:text-end ">
-          <button className=" py-2 px-5 xl:px-9  mx-auto text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex xl:hidden items-center justify-center ml-auto mt-3">
+          <button
+            onClick={() => {
+              router.push('/image-to-art-info');
+            }}
+            className=" py-2 px-5 xl:px-9  mx-auto text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex xl:hidden items-center justify-center ml-auto mt-3"
+          >
             Generate
           </button>
           <div className=" xl:w-1/2 h-full flex items-center justify-center ">
@@ -147,7 +152,7 @@ function Home() {
               Image to Art
             </p>
             <p className="text-[21px] xl:text-[36px] font-bold text-white">
-              Revolutionary Image-to-Image AI Technology
+              Revolutionary Image-to-Art AI Technology
             </p>
             <p className=" text-[10px] xl:text-[16px] text-white font-medium">
               Transform Your Images with AI Magic! Adjust Colors, Lighting & Add
@@ -179,7 +184,12 @@ function Home() {
               artists and creators to transform their drawings into personalized
               and visually stunning animations. Try Now!
             </p>
-            <button className=" py-2 px-9  xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center mr-auto mt-3">
+            <button
+              onClick={() => {
+                router.push('/create-arts');
+              }}
+              className=" py-2 px-9  xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center mr-auto mt-3"
+            >
               Generate
             </button>
           </div>
@@ -190,14 +200,24 @@ function Home() {
               alt=""
             />
           </div>
-          <button className=" py-2 px-5 xl:px-9 text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC]  mx-auto xl:hidden flex items-center justify-center mr-auto mt-3">
+          <button
+            onClick={() => {
+              router.push('/create-arts');
+            }}
+            className=" py-2 px-5 xl:px-9 text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC]  mx-auto xl:hidden flex items-center justify-center mr-auto mt-3"
+          >
             Generate
           </button>
         </div>
       </div>
       <div className=" max-w-screen-xl mx-auto gradient-blue p-5 xl:px-[53px] mt-[50px] xl:py-[46px] justify-between rounded-[20px] xl:rounded-[45px] w-full h-fit flex flex-col">
         <div className=" flex w-full xl:flex-row flex-col-reverse  ">
-          <button className=" py-2 px-5 xl:px-9 text-[12px] mx-auto xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] xl:hidden flex items-center justify-center ml-auto mt-3">
+          <button
+            onClick={() => {
+              router.push('/social-ads-info');
+            }}
+            className=" py-2 px-5 xl:px-9 text-[12px] mx-auto xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] xl:hidden flex items-center justify-center ml-auto mt-3"
+          >
             Generate
           </button>
           <div className=" xl:w-1/2 h-full flex items-center justify-center ">
@@ -226,7 +246,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className=" max-w-screen-xl mx-auto flex flex-col justify-center items-center  w-full text-center mt-[50px]  text-white">
+      <div className=" max-w-screen-xl mx-auto gradient-blue p-5 xl:px-[53px] flex flex-col justify-center items-center rounded-[20px] xl:rounded-[45px] w-full text-center mt-[50px]  text-white">
         <h1 className=" text-[21px] xl:text-[28px] font-bold mb-5 xl:mb-[30px]">
           Ready for some AI-powered fun?
         </h1>
@@ -287,9 +307,9 @@ function Home() {
         </p>
         <div className=" flex gap-x-5 items-center">
           <img
-           onClick={()=>{
-            router.push('')
-           }}
+            onClick={() => {
+              router.push('');
+            }}
             src="/images/social/discord-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
@@ -300,40 +320,51 @@ function Home() {
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
-           onClick={()=>{
-            router.push('https://www.facebook.com/artsaiaus/')
-           }}
+            onClick={() => {
+              router.push('https://www.facebook.com/artsaiaus/');
+            }}
             src="/images/social/facebook-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
-           onClick={()=>{
-            router.push('https://www.instagram.com/artsaiaus/')
-           }}
+            onClick={() => {
+              router.push('https://www.instagram.com/artsaiaus/');
+            }}
             src="/images/social/instragram-g.png"
             alt=""
             className=" cursor-pointer w-[26px] xl:w-auto"
           />
           <img
+            onClick={() => {
+              router.push('https://www.tiktok.com/@artsaiaus?lang=en');
+            }}
             src="/images/social/linked-in-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
-          onClick={()=>{
-            router.push(' https://twitter.com/artsaiaus')
-           }}
+            onClick={() => {
+              router.push(' https://twitter.com/artsaiaus');
+            }}
             src="/images/social/twitter-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
+            onClick={() => {
+              router.push(
+                'https://www.youtube.com/channel/UCux7292YzDpN0PyflaPkZ9g'
+              );
+            }}
             src="/images/social/youtube-g.png"
             alt=""
             className=" cursor-pointer w-[25px] xl:w-auto"
           />
           <img
+            onClick={() => {
+              router.push('https://www.tiktok.com/@artsaiaus?lang=en');
+            }}
             src="/images/social/tiktok-g.png"
             alt=""
             className=" cursor-pointer w-[20px] xl:w-auto"

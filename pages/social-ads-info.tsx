@@ -30,7 +30,7 @@ const SocialAdsInfo = () => {
           </div>
           <div className=" xl:w-1/2 container p-[20px] xl:p-[30px] flex flex-col">
             <h1 className=" text-[21px] xl:text-[28px] font-bold text-[#6ED1D7]">
-              Create Image to Art
+              Create Social Ads
             </h1>
             <p className=" text-[18px] xl:text-[24px] font-bold text-transparent textgradient-sea">
               Features

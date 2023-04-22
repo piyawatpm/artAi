@@ -194,7 +194,7 @@ const CreateImageToArt = () => {
         onChange={onSelectFile}
       />
 
-      <h1 className=" text-[21px] xl:text-[36px] font-black text-white my-10">
+      <h1 className=" text-[21px] xl:text-[36px] font-bold text-white my-10">
         Create <span className=" text-[#2DD48F]">Sketch to Art</span>
       </h1>
 
