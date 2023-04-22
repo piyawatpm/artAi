@@ -115,7 +115,7 @@ const CreateTextToArt = () => {
               </button>
             </a>
             <Link
-              href={`http://localhost:3001/create-single?image=${previewImage}`}
+              href={`https://oceansky.io/create-single?image=${previewImage}`}
               target="_blank"
               className="w-[150px] xl:w-[200px] py-3 h-[40px] xl:h-[51px]  justify-center text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC] flex items-center p-[20%] gap-x-3 mx-auto"
             >
