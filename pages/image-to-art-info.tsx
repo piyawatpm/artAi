@@ -81,12 +81,12 @@ const ImageToArtInfo = () => {
           </div>
         </div>
         <button
-          onClick={() => {
-            router.push('/create-image-to-art');
-          }}
+          // onClick={() => {
+          //   router.push('/create-image-to-art');
+          // }}
           className=" py-2 px-5 xl:px-9  text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex items-center justify-center mt-10 mx-auto "
         >
-          Generate
+          Coming Soon
         </button>
       </div>
     </div>

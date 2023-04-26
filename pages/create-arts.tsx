@@ -166,7 +166,7 @@ const Creation = () => {
             )}
           </div>
         </Transition>
-        {/* <Transition
+        <Transition
           show={
             creationView === CreationView.All ||
             creationView === CreationView.DrawingToAnimation
@@ -186,9 +186,9 @@ const Creation = () => {
           }}
         >
           <div
-            onClick={() => {
-              setCreationView(CreationView.DrawingToAnimation);
-            }}
+            // onClick={() => {
+            //   setCreationView(CreationView.DrawingToAnimation);
+            // }}
             className={` ${
               creationView !== CreationView.DrawingToAnimation
                 ? 'hover:scale-[120%] cursor-pointer duration-300'
@@ -227,7 +227,7 @@ const Creation = () => {
               </button>
             )}
           </div>
-        </Transition> */}
+        </Transition>
         {creationView !== CreationView.All && isReady && (
           <Transition
             show={true}

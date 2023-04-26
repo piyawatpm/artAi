@@ -94,7 +94,7 @@ function Home() {
       <div className=" max-w-screen-xl mx-auto bg-[#030303]/[23%] p-5 xl:px-[53px] sm:py-[46px] justify-between rounded-[20px] sm:rounded-[45px] w-full h-fit gap-y-10 flex flex-col">
         <div className=" flex sm:flex-row flex-col w-full h-1/2">
           <div className=" sm:w-1/2 flex flex-col">
-            <p className=" text-[#406CC0] text-[10px] xl:text-[16px] font-medium">
+            <p className=" text-[#36ECF5] text-[10px] xl:text-[16px] font-bold">
               Text to Art
             </p>
             <p className="text-[21px] xl:text-[36px] font-bold text-white">
@@ -133,22 +133,22 @@ function Home() {
         </div>
         <div className=" flex w-full xl:flex-row flex-col-reverse h-1/2 xl:text-end ">
           <button
-            onClick={() => {
-              router.push('/image-to-art-info');
-            }}
+            // onClick={() => {
+            //   router.push('/image-to-art-info');
+            // }}
             className=" py-2 px-5 xl:px-9  mx-auto text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] flex xl:hidden items-center justify-center ml-auto mt-3"
           >
-            Generate
+            Coming Soon
           </button>
-          <div className=" xl:w-1/2 h-full flex items-center justify-center ">
+          <div className=" xl:w-[45%] h-full flex items-center justify-center ">
             <img
               src="/images/index/image-to-image.gif"
               className=" xl:w-[400px] xl:h-[290px] xl:my-0 my-5"
               alt=""
             />
           </div>
-          <div className=" xl:w-1/2 flex flex-col xl:justify-end">
-            <p className=" text-[#406CC0] text-[10px] xl:text-[16px] font-medium">
+          <div className=" xl:w-[55%] flex flex-col xl:justify-end">
+            <p className=" text-[#36ECF5] text-[10px] xl:text-[16px] font-bold">
               Image to Art
             </p>
             <p className="text-[21px] xl:text-[36px] font-bold text-white">
@@ -165,7 +165,7 @@ function Home() {
               }}
               className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center ml-auto mt-3"
             >
-              Generate
+              Coming Soon
             </button>
           </div>
         </div>
@@ -173,7 +173,7 @@ function Home() {
       <div className=" max-w-screen-xl mx-auto gradient-blue p-5 xl:px-[53px] mt-[50px] xl:py-[46px] justify-between rounded-[20px] xl:rounded-[45px] w-full h-fit flex flex-col">
         <div className=" flex w-full xl:flex-row flex-col">
           <div className=" xl:w-1/2 flex flex-col">
-            <p className=" text-[#406CC0] text-[10px] xl:text-[16px] font-medium">
+            <p className=" text-[#36ECF5] text-[10px] xl:text-[16px] font-bold">
               Image to Animation
             </p>
             <p className="text-[21px] xl:text-[36px] font-bold text-white">
@@ -185,12 +185,12 @@ function Home() {
               and visually stunning animations. Try Now!
             </p>
             <button
-              onClick={() => {
-                router.push('/create-arts');
-              }}
-              className=" py-2 px-9  xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center mr-auto mt-3"
+              // onClick={() => {
+              //   router.push('/create-arts');
+              // }}
+              className=" py-2 px-9   xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center mr-auto mt-3"
             >
-              Generate
+              Coming Soon
             </button>
           </div>
           <div className=" xl:w-1/2 h-full flex items-center justify-center ">
@@ -201,30 +201,30 @@ function Home() {
             />
           </div>
           <button
-            onClick={() => {
-              router.push('/create-arts');
-            }}
+            // onClick={() => {
+            //   router.push('/create-arts');
+            // }}
             className=" py-2 px-5 xl:px-9 text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC]  mx-auto xl:hidden flex items-center justify-center mr-auto mt-3"
           >
-            Generate
+            Coming Soon
           </button>
         </div>
       </div>
       <div className=" max-w-screen-xl mx-auto gradient-blue p-5 xl:px-[53px] mt-[50px] xl:py-[46px] justify-between rounded-[20px] xl:rounded-[45px] w-full h-fit flex flex-col">
         <div className=" flex w-full xl:flex-row flex-col-reverse  ">
           <button
-            onClick={() => {
-              router.push('/social-ads-info');
-            }}
+            // onClick={() => {
+            //   router.push('/social-ads-info');
+            // }}
             className=" py-2 px-5 xl:px-9 text-[12px] mx-auto xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] xl:hidden flex items-center justify-center ml-auto mt-3"
           >
-            Generate
+            Coming Soon
           </button>
           <div className=" xl:w-1/2 h-full flex items-center justify-center ">
             <img src="/images/index/ai-ads.png" alt="" />
           </div>
           <div className=" xl:w-1/2 flex flex-col xl:text-end">
-            <p className=" text-[#0D9488] text-[10px] xl:text-[16px] font-medium">
+            <p className=" text-[#36ECF5] text-[10px] xl:text-[16px] font-bold">
               AI Social Ads
             </p>
             <p className="text-[21px] xl:text-[36px] font-bold text-white uppercase xl:leading-[40px] xl:my-3">
@@ -236,12 +236,12 @@ function Home() {
               Save Time & Boost Ad Effectiveness - Try Now!
             </p>
             <button
-              onClick={() => {
-                router.push('/social-ads-info');
-              }}
+              // onClick={() => {
+              //   router.push('/social-ads-info');
+              // }}
               className=" py-2 px-9  text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488]  via-[#4468C5] to-[#8C70DC] hidden xl:flex items-center justify-center ml-auto mt-3"
             >
-              Generate
+              Coming Soon
             </button>
           </div>
         </div>
@@ -321,7 +321,7 @@ function Home() {
           />
           <img
             onClick={() => {
-              router.push('https://www.facebook.com/artsaiaus/');
+              router.push('https://www.facebook.com/ArtsaiNFT');
             }}
             src="/images/social/facebook-g.png"
             alt=""
