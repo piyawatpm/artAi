@@ -10,9 +10,7 @@ deepai.setApiKey('7a674fc4-34fc-4801-a27e-c34049e322f4');
 
 const CreateTextToArt = () => {
   const [letter, setLetter] = useState('');
-  const [previewImage, setPreviewImage] = useState<string>(
-    'https://api.deepai.org/job-view-file/832bd25d-6c38-49af-9aba-183286d43aff/outputs/output.jpg'
-  );
+  const [previewImage, setPreviewImage] = useState<string>();
   const [isLoading, setIsLoading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const clearText = () => {
@@ -101,7 +99,7 @@ const CreateTextToArt = () => {
         <div className=" flex flex-col mt-auto  text-white text-[18px] font-bold items-center justify-center ">
           <p className=" mb-5">{isComplete && letter}</p>
           <div className=" flex items-center justify-center gap-x-3">
-            <a href={previewImage} download>
+            <a href={previewImage || ''} download={previewImage}>
               <button
                 onClick={downloadImage}
                 className="w-[150px] xl:w-[200px] h-[40px] xl:h-[51px] py-3  flex items-center justify-center text-[12px] xl:text-[18px] font-bold text-white rounded-[15px] bg-gradient-to-r from-[#0D9488] via-[#4468C5] to-[#8C70DC]  p-[20%] gap-x-3 mx-auto"

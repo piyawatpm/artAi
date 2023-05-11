@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 const Header = () => {
   const router = useRouter();
@@ -24,9 +25,14 @@ const Header = () => {
         >
           Pricing
         </p>
-        <p className=" sm:block hidden text-white hover:text-[#6ED1D7] cursor-pointer uppercase">
+
+        <Link
+          className=" sm:block hidden text-white hover:text-[#6ED1D7] cursor-pointer uppercase"
+          href={'/pdf/whitepaper-ArtsAI-v.1.0.pdf'}
+          target="_blank"
+        >
           Whitepaper
-        </p>
+        </Link>
         <p
           onClick={() => {
             router.push('/supporter');
